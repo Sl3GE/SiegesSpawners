@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="SiegesSpawners:jar">
+    <output-path>$PROJECT_DIR$/../1.16.1 Test Server/plugins</output-path>
+    <root id="archive" name="SiegesSpawners.jar">
+      <element id="module-output" name="SiegesSpawners" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Dependencies/spigot-api-1.16.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

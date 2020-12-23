@@ -1,0 +1,5 @@
+name: SiegesSpawners
+version: 1.0
+author: Siege
+main: com.siege.siegesspawners.SiegesSpawners
+api-version: 1.14
