@@ -14,6 +14,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 public class HostileMobSpawners {
     public static void init() {
         skeletonSpawnerRecipe();
+        zombieSpawnerRecipe();
     }
 
     private static void skeletonSpawnerRecipe() {
@@ -32,6 +33,26 @@ public class HostileMobSpawners {
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("skeleton_spawner"), item);
         recipe.shape("BBB","BIB","BBB");
         recipe.setIngredient('B',  new RecipeChoice.ExactChoice(CondensedHostileMobItems.condensedBone));
+        recipe.setIngredient('I',Material.IRON_BARS);
+        Bukkit.addRecipe(recipe);
+    }
+
+    private static void zombieSpawnerRecipe() {
+        ItemStack item = new ItemStack(Material.SPAWNER,1);
+        ItemMeta meta = item.getItemMeta();
+        BlockStateMeta blockStateMeta = (BlockStateMeta) meta;
+        BlockState blockState = blockStateMeta.getBlockState();
+        CreatureSpawner creatureSpawner = (CreatureSpawner) blockState;
+        creatureSpawner.setSpawnedType(EntityType.ZOMBIE);
+        blockState = (BlockState) creatureSpawner;
+        blockStateMeta.setBlockState(blockState);
+        meta = (ItemMeta) blockStateMeta;
+        meta.setDisplayName("§6Zombie Spawner");
+        item.setItemMeta(meta);
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("zombie_spawner"), item);
+        recipe.shape("FFF","FIF","FFF");
+        recipe.setIngredient('F',  new RecipeChoice.ExactChoice(CondensedHostileMobItems.condensedRottenFlesh));
         recipe.setIngredient('I',Material.IRON_BARS);
         Bukkit.addRecipe(recipe);
     }

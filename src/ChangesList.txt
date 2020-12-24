@@ -5,9 +5,9 @@ Concentrated Items Added:
 + bones
 + snow block
 + carved pumpkin
++ rotten flesh
 
 Concentrated Items to be Added:
-- rotten flesh
 - mutton
 - pork chops
 - chicken
@@ -27,9 +27,9 @@ Spawner Recipes Added:
 + Iron Golem
 + Skeleton
 + Snowman
++ Zombie
 
 Spawner Recipes to be Added:
-- Zombie
 - Sheep
 - Pig
 - Chicken

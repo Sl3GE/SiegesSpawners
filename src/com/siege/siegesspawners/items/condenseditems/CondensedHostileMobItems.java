@@ -11,11 +11,12 @@ import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class CondensedHostileMobItems {
-    public static ItemStack condensedIronBlock;
     public static ItemStack condensedBone;
+    public static ItemStack condensedRottenFlesh;
 
     public static void init() {
         createCondensedBone();
+        createCondensedRottenFlesh();
     }
 
     private static void createCondensedBone() {
@@ -30,6 +31,21 @@ public class CondensedHostileMobItems {
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_bone"), condensedBone);
         recipe.shape("BBB","BBB","BBB");
         recipe.setIngredient('B', new RecipeChoice.ExactChoice(new ItemStack(Material.BONE,1)));
+        Bukkit.addRecipe(recipe);
+    }
+
+    private static void createCondensedRottenFlesh() {
+        ItemStack item = new ItemStack(Material.ROTTEN_FLESH, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§2Condensed Rotten Flesh");
+        meta.addEnchant(Enchantment.LUCK,1,true);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        item.setItemMeta(meta);
+        condensedRottenFlesh = item;
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_rotten_flesh"), condensedRottenFlesh);
+        recipe.shape("FFF","FFF","FFF");
+        recipe.setIngredient('F', new RecipeChoice.ExactChoice(new ItemStack(Material.ROTTEN_FLESH,1)));
         Bukkit.addRecipe(recipe);
     }
 }
