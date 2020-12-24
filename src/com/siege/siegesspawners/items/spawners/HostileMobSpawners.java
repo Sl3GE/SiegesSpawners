@@ -1,6 +1,7 @@
 package com.siege.siegesspawners.items.spawners;
 
 import com.siege.siegesspawners.items.condenseditems.CondensedHostileMobItems;
+import com.siege.siegesspawners.items.supercondenseditems.SuperCondensedHostileMobItems;
 import org.bukkit.*;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.CreatureSpawner;
@@ -33,7 +34,7 @@ public class HostileMobSpawners {
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("skeleton_spawner"), item);
         recipe.shape("BBB","BIB","BBB");
-        recipe.setIngredient('B',  new RecipeChoice.ExactChoice(CondensedHostileMobItems.condensedBone));
+        recipe.setIngredient('B',  new RecipeChoice.ExactChoice(SuperCondensedHostileMobItems.superCondensedBone));
         recipe.setIngredient('I',Material.IRON_BARS);
         Bukkit.addRecipe(recipe);
     }
@@ -53,7 +54,7 @@ public class HostileMobSpawners {
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("zombie_spawner"), item);
         recipe.shape("FFF","FIF","FFF");
-        recipe.setIngredient('F',  new RecipeChoice.ExactChoice(CondensedHostileMobItems.condensedRottenFlesh));
+        recipe.setIngredient('F',  new RecipeChoice.ExactChoice(SuperCondensedHostileMobItems.superCondensedRottenFlesh));
         recipe.setIngredient('I',Material.IRON_BARS);
         Bukkit.addRecipe(recipe);
     }
@@ -73,7 +74,7 @@ public class HostileMobSpawners {
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("blaze_spawner"), item);
         recipe.shape("RRR","RIR","RRR");
-        recipe.setIngredient('R',  new RecipeChoice.ExactChoice(CondensedHostileMobItems.condensedBlazeRod));
+        recipe.setIngredient('R',  new RecipeChoice.ExactChoice(SuperCondensedHostileMobItems.superCondensedBlazeRod));
         recipe.setIngredient('I',Material.IRON_BARS);
         Bukkit.addRecipe(recipe);
     }
