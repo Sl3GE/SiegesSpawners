@@ -1,4 +1,4 @@
-package com.siege.siegesspawners.items;
+package com.siege.siegesspawners.items.condenseditems;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -6,6 +6,7 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -29,8 +30,8 @@ public class CondensedMobItems {
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_iron_block"), condensedIronBlock);
         recipe.shape("BBB","BBB","BBB");
-        recipe.setIngredient('B', Material.IRON_BLOCK);
-        Bukkit.getServer().addRecipe(recipe);
+        recipe.setIngredient('B', new RecipeChoice.ExactChoice(new ItemStack(Material.IRON_BLOCK,1)));
+        Bukkit.addRecipe(recipe);
     }
 
     private static void createCondensedBone() {
@@ -44,7 +45,7 @@ public class CondensedMobItems {
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_bone"), condensedBone);
         recipe.shape("BBB","BBB","BBB");
-        recipe.setIngredient('B', Material.BONE);
-        Bukkit.getServer().addRecipe(recipe);
+        recipe.setIngredient('B', new RecipeChoice.ExactChoice(new ItemStack(Material.BONE,1)));
+        Bukkit.addRecipe(recipe);
     }
 }

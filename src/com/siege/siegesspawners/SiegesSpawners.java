@@ -1,8 +1,8 @@
 package com.siege.siegesspawners;
 
-import com.siege.siegesspawners.items.CondensedAnimalItems;
-import com.siege.siegesspawners.items.CondensedMobItems;
-import com.siege.siegesspawners.items.SpawnerRecipes;
+import com.siege.siegesspawners.items.condenseditems.CondensedAnimalItems;
+import com.siege.siegesspawners.items.condenseditems.CondensedMobItems;
+import com.siege.siegesspawners.items.spawners.SpawnerRecipes;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 

@@ -1,11 +1,15 @@
-package com.siege.siegesspawners.items;
+package com.siege.siegesspawners.items.spawners;
 
+import com.siege.siegesspawners.items.condenseditems.CondensedAnimalItems;
+import com.siege.siegesspawners.items.condenseditems.CondensedMobItems;
 import org.bukkit.*;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.CreatureSpawner;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapedRecipe;
+import org.bukkit.inventory.ShapelessRecipe;
 import org.bukkit.inventory.meta.BlockStateMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -42,9 +46,9 @@ public class SpawnerRecipes {
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("iron_golem_spawner"), item);
         recipe.shape("III","IBI","III");
-        recipe.setIngredient('I', CondensedMobItems.condensedIronBlock.getType());
+        recipe.setIngredient('I', new RecipeChoice.ExactChoice(CondensedMobItems.condensedIronBlock));
         recipe.setIngredient('B',Material.IRON_BARS);
-        Bukkit.getServer().addRecipe(recipe);
+        Bukkit.addRecipe(recipe);
     }
 
     private static void cowSpawnerRecipe() {
@@ -62,10 +66,10 @@ public class SpawnerRecipes {
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("cow_spawner"), item);
         recipe.shape("LLL","LIB","BBB");
-        recipe.setIngredient('L', CondensedAnimalItems.condensedLeather.getType());
-        recipe.setIngredient('B', CondensedAnimalItems.condensedBeef.getType());
+        recipe.setIngredient('L',  new RecipeChoice.ExactChoice(CondensedAnimalItems.condensedLeather));
+        recipe.setIngredient('B', new RecipeChoice.ExactChoice(CondensedAnimalItems.condensedBeef));
         recipe.setIngredient('I',Material.IRON_BARS);
-        Bukkit.getServer().addRecipe(recipe);
+        Bukkit.addRecipe(recipe);
     }
 
     private static void skeletonSpawnerRecipe() {
@@ -83,8 +87,8 @@ public class SpawnerRecipes {
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("skeleton_spawner"), item);
         recipe.shape("BBB","BIB","BBB");
-        recipe.setIngredient('B', CondensedMobItems.condensedBone.getType());
+        recipe.setIngredient('B',  new RecipeChoice.ExactChoice(CondensedMobItems.condensedBone));
         recipe.setIngredient('I',Material.IRON_BARS);
-        Bukkit.getServer().addRecipe(recipe);
+        Bukkit.addRecipe(recipe);
     }
 }
