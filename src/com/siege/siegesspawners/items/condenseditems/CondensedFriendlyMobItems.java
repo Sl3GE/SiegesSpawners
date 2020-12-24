@@ -16,11 +16,14 @@ public class CondensedFriendlyMobItems {
     public static ItemStack condensedBeef;
     public static ItemStack condensedCarvedPumpkin;
     public static ItemStack condensedSnowBlock;
+    public static ItemStack condensedWhiteWool;
+    public static ItemStack condensedMutton;
 
     public static void init() {
         createCondensedCowDrops();
         createCondensedIronBlock();
         createCondensedSnowmanDrops();
+        createCondensedSheepDrops();
     }
 
     private static void createCondensedIronBlock() {
@@ -91,6 +94,34 @@ public class CondensedFriendlyMobItems {
         recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_snow_block"), condensedSnowBlock);
         recipe.shape("BBB","BBB","BBB");
         recipe.setIngredient('B', new RecipeChoice.ExactChoice(new ItemStack(Material.SNOW_BLOCK,1)));
+        Bukkit.getServer().addRecipe(recipe);
+    }
+
+    private static void createCondensedSheepDrops() {
+        ItemStack item = new ItemStack(Material.WHITE_WOOL, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§2Condensed White Wool");
+        meta.addEnchant(Enchantment.LUCK,1,true);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        item.setItemMeta(meta);
+        condensedWhiteWool = item;
+
+        item = new ItemStack(Material.MUTTON, 1);
+        meta = item.getItemMeta();
+        meta.setDisplayName("§2Condensed Mutton");
+        meta.addEnchant(Enchantment.LUCK,1,true);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        item.setItemMeta(meta);
+        condensedMutton = item;
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_white_wool"), condensedWhiteWool);
+        recipe.shape("WWW","WWW","WWW");
+        recipe.setIngredient('W', new RecipeChoice.ExactChoice(new ItemStack(Material.WHITE_WOOL,1)));
+        Bukkit.getServer().addRecipe(recipe);
+
+        recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_mutton"), condensedMutton);
+        recipe.shape("MMM","MMM","MMM");
+        recipe.setIngredient('M', new RecipeChoice.ExactChoice(new ItemStack(Material.MUTTON,1)));
         Bukkit.getServer().addRecipe(recipe);
     }
 

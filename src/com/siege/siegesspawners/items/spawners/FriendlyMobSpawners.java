@@ -20,6 +20,7 @@ public class FriendlyMobSpawners {
         ironGolemSpawnerRecipe();
         cowSpawnerRecipe();
         SnowManSpawnerRecipe();
+        SheepSpawnerRecipe();
     }
 
     private static void ironGolemSpawnerRecipe() {
@@ -67,7 +68,7 @@ public class FriendlyMobSpawners {
         item.setItemMeta(meta);
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("cow_spawner"), item);
-        recipe.shape("LLL","LIB","BBB");
+        recipe.shape("LLL","BIB","BBB");
         recipe.setIngredient('L',  new RecipeChoice.ExactChoice(CondensedFriendlyMobItems.condensedLeather));
         recipe.setIngredient('B', new RecipeChoice.ExactChoice(CondensedFriendlyMobItems.condensedBeef));
         recipe.setIngredient('I',Material.IRON_BARS);
@@ -91,6 +92,27 @@ public class FriendlyMobSpawners {
         recipe.shape("CCC","BIB","BBB");
         recipe.setIngredient('C',  new RecipeChoice.ExactChoice(CondensedFriendlyMobItems.condensedCarvedPumpkin));
         recipe.setIngredient('B', new RecipeChoice.ExactChoice(CondensedFriendlyMobItems.condensedSnowBlock));
+        recipe.setIngredient('I',Material.IRON_BARS);
+        Bukkit.addRecipe(recipe);
+    }
+
+    private static void SheepSpawnerRecipe() {
+        ItemStack item = new ItemStack(Material.SPAWNER,1);
+        ItemMeta meta = item.getItemMeta();
+        BlockStateMeta blockStateMeta = (BlockStateMeta) meta;
+        BlockState blockState = blockStateMeta.getBlockState();
+        CreatureSpawner creatureSpawner = (CreatureSpawner) blockState;
+        creatureSpawner.setSpawnedType(EntityType.SHEEP);
+        blockState = (BlockState) creatureSpawner;
+        blockStateMeta.setBlockState(blockState);
+        meta = (ItemMeta) blockStateMeta;
+        meta.setDisplayName("§6Sheep Spawner");
+        item.setItemMeta(meta);
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("sheep_spawner"), item);
+        recipe.shape("WWW","MIM","MMM");
+        recipe.setIngredient('W',  new RecipeChoice.ExactChoice(CondensedFriendlyMobItems.condensedWhiteWool));
+        recipe.setIngredient('M', new RecipeChoice.ExactChoice(CondensedFriendlyMobItems.condensedMutton));
         recipe.setIngredient('I',Material.IRON_BARS);
         Bukkit.addRecipe(recipe);
     }
