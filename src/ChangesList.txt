@@ -2,10 +2,12 @@ Concentrated Items Added:
 + iron blocks
 + leather
 + beef
++ bones
++ snow block
++ carved pumpkin
 
 Concentrated Items to be Added:
 - rotten flesh
-- bones
 - mutton
 - pork chops
 - chicken
@@ -23,10 +25,11 @@ Concentrated Items to be Added:
 Spawner Recipes Added:
 + Cow
 + Iron Golem
++ Skeleton
++ Snowman
 
 Spawner Recipes to be Added:
 - Zombie
-- Skeleton
 - Sheep
 - Pig
 - Chicken
@@ -44,7 +47,6 @@ Spawner Recipes to be Added:
 - Mooshroom
 - Giant
 - Silverfish
-- Snow Golem
 - Magma Cube
 - Ocelot
 - Horse

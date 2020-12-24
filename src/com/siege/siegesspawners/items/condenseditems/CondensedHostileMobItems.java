@@ -10,28 +10,12 @@ import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class CondensedMobItems {
+public class CondensedHostileMobItems {
     public static ItemStack condensedIronBlock;
     public static ItemStack condensedBone;
 
     public static void init() {
-        createCondensedIronBlock();
         createCondensedBone();
-    }
-
-    private static void createCondensedIronBlock() {
-        ItemStack item = new ItemStack(Material.IRON_BLOCK, 1);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("§2Condensed Iron Block");
-        meta.addEnchant(Enchantment.LUCK,1,true);
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        item.setItemMeta(meta);
-        condensedIronBlock = item;
-
-        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_iron_block"), condensedIronBlock);
-        recipe.shape("BBB","BBB","BBB");
-        recipe.setIngredient('B', new RecipeChoice.ExactChoice(new ItemStack(Material.IRON_BLOCK,1)));
-        Bukkit.addRecipe(recipe);
     }
 
     private static void createCondensedBone() {
