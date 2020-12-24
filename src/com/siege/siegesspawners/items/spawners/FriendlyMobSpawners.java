@@ -20,8 +20,9 @@ public class FriendlyMobSpawners {
     public static void init() {
         ironGolemSpawnerRecipe();
         cowSpawnerRecipe();
-        SnowManSpawnerRecipe();
-        SheepSpawnerRecipe();
+        snowManSpawnerRecipe();
+        sheepSpawnerRecipe();
+        pigSpawnerRecipe();
     }
 
     private static void ironGolemSpawnerRecipe() {
@@ -76,7 +77,7 @@ public class FriendlyMobSpawners {
         Bukkit.addRecipe(recipe);
     }
 
-    private static void SnowManSpawnerRecipe() {
+    private static void snowManSpawnerRecipe() {
         ItemStack item = new ItemStack(Material.SPAWNER,1);
         ItemMeta meta = item.getItemMeta();
         BlockStateMeta blockStateMeta = (BlockStateMeta) meta;
@@ -97,7 +98,7 @@ public class FriendlyMobSpawners {
         Bukkit.addRecipe(recipe);
     }
 
-    private static void SheepSpawnerRecipe() {
+    private static void sheepSpawnerRecipe() {
         ItemStack item = new ItemStack(Material.SPAWNER,1);
         ItemMeta meta = item.getItemMeta();
         BlockStateMeta blockStateMeta = (BlockStateMeta) meta;
@@ -114,6 +115,26 @@ public class FriendlyMobSpawners {
         recipe.shape("WWW","MIM","MMM");
         recipe.setIngredient('W',  new RecipeChoice.ExactChoice(SuperCondensedFriendlyMobItems.superCondensedWhiteWool));
         recipe.setIngredient('M', new RecipeChoice.ExactChoice(SuperCondensedFriendlyMobItems.superCondensedMutton));
+        recipe.setIngredient('I',Material.IRON_BARS);
+        Bukkit.addRecipe(recipe);
+    }
+
+    private static void pigSpawnerRecipe() {
+        ItemStack item = new ItemStack(Material.SPAWNER,1);
+        ItemMeta meta = item.getItemMeta();
+        BlockStateMeta blockStateMeta = (BlockStateMeta) meta;
+        BlockState blockState = blockStateMeta.getBlockState();
+        CreatureSpawner creatureSpawner = (CreatureSpawner) blockState;
+        creatureSpawner.setSpawnedType(EntityType.PIG);
+        blockState = (BlockState) creatureSpawner;
+        blockStateMeta.setBlockState(blockState);
+        meta = (ItemMeta) blockStateMeta;
+        meta.setDisplayName("§6Pig Spawner");
+        item.setItemMeta(meta);
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("pig_spawner"), item);
+        recipe.shape("PPP","PIP","PPP");
+        recipe.setIngredient('P', new RecipeChoice.ExactChoice(SuperCondensedFriendlyMobItems.superCondensedPorkChop));
         recipe.setIngredient('I',Material.IRON_BARS);
         Bukkit.addRecipe(recipe);
     }

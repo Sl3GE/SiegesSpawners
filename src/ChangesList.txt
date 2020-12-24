@@ -9,9 +9,9 @@ Concentrated Items Added:
 + white wool
 + mutton
 + blaze rods
++ porkchops
 
 Concentrated Items to be Added:
-- pork chops
 - chicken
 - feathers
 - gunpowder
@@ -31,9 +31,9 @@ Spawner Recipes Added:
 + Zombie
 + Sheep
 + Blaze
++ Pig
 
 Spawner Recipes to be Added:
-- Pig
 - Chicken
 - Creeper
 - Bat
@@ -54,3 +54,4 @@ Spawner Recipes to be Added:
 - Ender Dragon
 - Wither
 - Wolf
+- Villager

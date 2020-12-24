@@ -18,12 +18,14 @@ public class CondensedFriendlyMobItems {
     public static ItemStack condensedSnowBlock;
     public static ItemStack condensedWhiteWool;
     public static ItemStack condensedMutton;
+    public static ItemStack condensedPorkChop;
 
     public static void init() {
         createCondensedCowDrops();
         createCondensedIronBlock();
         createCondensedSnowmanDrops();
         createCondensedSheepDrops();
+        createCondensedPorkChop();
     }
 
     private static void createCondensedIronBlock() {
@@ -125,4 +127,18 @@ public class CondensedFriendlyMobItems {
         Bukkit.getServer().addRecipe(recipe);
     }
 
+    private static void createCondensedPorkChop() {
+        ItemStack item = new ItemStack(Material.PORKCHOP, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§2Condensed Porkchop");
+        meta.addEnchant(Enchantment.LUCK,1,true);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        item.setItemMeta(meta);
+        condensedPorkChop = item;
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_porkchop"), condensedPorkChop);
+        recipe.shape("PPP","PPP","PPP");
+        recipe.setIngredient('P', new RecipeChoice.ExactChoice(new ItemStack(Material.PORKCHOP,1)));
+        Bukkit.addRecipe(recipe);
+    }
 }

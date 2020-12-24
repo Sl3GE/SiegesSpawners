@@ -18,11 +18,13 @@ public class SuperCondensedFriendlyMobItems {
     public static ItemStack superCondensedSnowBlock;
     public static ItemStack superCondensedWhiteWool;
     public static ItemStack superCondensedMutton;
+    public static ItemStack superCondensedPorkChop;
 
     public static void init() {
         createSuperCondensedCowDrops();
         createSuperCondensedSnowmanDrops();
         superCreateCondensedSheepDrops();
+        createSuperCondensedPorkChop();
     }
 
     private static void createSuperCondensedCowDrops() {
@@ -107,5 +109,19 @@ public class SuperCondensedFriendlyMobItems {
         recipe.shape("MMM","MMM","MMM");
         recipe.setIngredient('M', new RecipeChoice.ExactChoice(CondensedFriendlyMobItems.condensedMutton));
         Bukkit.getServer().addRecipe(recipe);
+    }
+    private static void createSuperCondensedPorkChop() {
+        ItemStack item = new ItemStack(Material.PORKCHOP, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§1Super Condensed Porkchop");
+        meta.addEnchant(Enchantment.LUCK,1,true);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        item.setItemMeta(meta);
+        superCondensedPorkChop = item;
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("super_condensed_porkchop"), superCondensedPorkChop);
+        recipe.shape("PPP","PPP","PPP");
+        recipe.setIngredient('P', new RecipeChoice.ExactChoice(CondensedFriendlyMobItems.condensedPorkChop));
+        Bukkit.addRecipe(recipe);
     }
 }
