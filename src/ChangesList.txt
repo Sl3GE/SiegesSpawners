@@ -1,0 +1,53 @@
+Concentrated Items Added:
++ iron blocks
++ leather
++ beef
+
+Concentrated Items to be Added:
+- rotten flesh
+- bones
+- mutton
+- pork chops
+- chicken
+- feathers
+- blaze rods
+- gunpowder
+- spider eyes
+- red stone
+- slime balls
+- gold
+- ink sacs
+- ender pearls
+- neither stars
+
+Spawner Recipes Added:
++ Cow
++ Iron Golem
+
+Spawner Recipes to be Added:
+- Zombie
+- Skeleton
+- Sheep
+- Pig
+- Chicken
+- Blaze
+- Creeper
+- Bat
+- Spider
+- Cave Spider
+- Witch
+- Slime
+- Ghast
+- Zombie Pigman
+- Squid
+- Enderman
+- Mooshroom
+- Giant
+- Silverfish
+- Snow Golem
+- Magma Cube
+- Ocelot
+- Horse
+- Ender Dragon
+- Wither
+- Wolf

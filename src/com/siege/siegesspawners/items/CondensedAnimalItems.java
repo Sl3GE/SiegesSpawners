@@ -44,4 +44,5 @@ public class CondensedAnimalItems {
         recipe.setIngredient('B', Material.BEEF);
         Bukkit.getServer().addRecipe(recipe);
     }
+
 }

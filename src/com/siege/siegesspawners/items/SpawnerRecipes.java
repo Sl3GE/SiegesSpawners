@@ -13,6 +13,7 @@ public class SpawnerRecipes {
     public static void init() {
         ironGolemSpawnerRecipe();
         cowSpawnerRecipe();
+        skeletonSpawnerRecipe();
     }
 
     private static void ironGolemSpawnerRecipe() {
@@ -63,6 +64,26 @@ public class SpawnerRecipes {
         recipe.shape("LLL","LIB","BBB");
         recipe.setIngredient('L', CondensedAnimalItems.condensedLeather.getType());
         recipe.setIngredient('B', CondensedAnimalItems.condensedBeef.getType());
+        recipe.setIngredient('I',Material.IRON_BARS);
+        Bukkit.getServer().addRecipe(recipe);
+    }
+
+    private static void skeletonSpawnerRecipe() {
+        ItemStack item = new ItemStack(Material.SPAWNER,1);
+        ItemMeta meta = item.getItemMeta();
+        BlockStateMeta blockStateMeta = (BlockStateMeta) meta;
+        BlockState blockState = blockStateMeta.getBlockState();
+        CreatureSpawner creatureSpawner = (CreatureSpawner) blockState;
+        creatureSpawner.setSpawnedType(EntityType.SKELETON);
+        blockState = (BlockState) creatureSpawner;
+        blockStateMeta.setBlockState(blockState);
+        meta = (ItemMeta) blockStateMeta;
+        meta.setDisplayName("§6Skeleton Spawner");
+        item.setItemMeta(meta);
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("skeleton_spawner"), item);
+        recipe.shape("BBB","BIB","BBB");
+        recipe.setIngredient('B', CondensedMobItems.condensedBone.getType());
         recipe.setIngredient('I',Material.IRON_BARS);
         Bukkit.getServer().addRecipe(recipe);
     }
