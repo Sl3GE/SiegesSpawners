@@ -21,6 +21,7 @@ public class HostileMobSpawners {
         spiderSpawnerRecipe();
         endermanSpawnerRecipe();
         slimeSpawnerRecipe();
+        MagmaCubeSpawnerRecipe();
     }
     private static ItemStack itemCreator(Material material, int amount, EntityType entityType, String displayName) {
         /*
@@ -114,6 +115,16 @@ public class HostileMobSpawners {
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("slime_spawner"), item);
         recipe.shape("SSS","SIS","SSS");
         recipe.setIngredient('S',  new RecipeChoice.ExactChoice(CondensedHostileMobItems.condensedSlimeBlock));
+        recipe.setIngredient('I',Material.IRON_BARS);
+        Bukkit.addRecipe(recipe);
+    }
+
+    private static void MagmaCubeSpawnerRecipe() {
+        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.MAGMA_CUBE,"§6Magma Cube Spawner");
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("magma_cube_spawner"), item);
+        recipe.shape("MMM","MIM","MMM");
+        recipe.setIngredient('M',  new RecipeChoice.ExactChoice(SuperCondensedHostileMobItems.superCondensedMagmaCream));
         recipe.setIngredient('I',Material.IRON_BARS);
         Bukkit.addRecipe(recipe);
     }

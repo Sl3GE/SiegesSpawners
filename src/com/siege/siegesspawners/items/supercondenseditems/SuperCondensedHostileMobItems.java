@@ -19,6 +19,7 @@ public class SuperCondensedHostileMobItems {
     public static ItemStack superCondensedGunpowder;
     public static ItemStack superCondensedString;
     public static ItemStack superCondensedEnderPearl;
+    public static ItemStack superCondensedMagmaCream;
 
     public static void init() {
         createSuperCondensedBone();
@@ -27,6 +28,7 @@ public class SuperCondensedHostileMobItems {
         createSuperCondensedGunpowder();
         createSuperCondensedString();
         createSuperCondensedEnderPearl();
+        createSuperCondensedMagmaCream();
     }
 
     private static ItemStack createItem(Material material, int amount, String displayName) {
@@ -90,6 +92,15 @@ public class SuperCondensedHostileMobItems {
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("super_condensed_ender_pearl"), superCondensedEnderPearl);
         recipe.shape("EEE","EEE","EEE");
         recipe.setIngredient('E', new RecipeChoice.ExactChoice(CondensedHostileMobItems.condensedEnderPearl));
+        Bukkit.addRecipe(recipe);
+    }
+
+    private static void createSuperCondensedMagmaCream() {
+        superCondensedMagmaCream = createItem(Material.MAGMA_CREAM, 1, "§1Super Condensed Magma Cream");
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("super_condensed_magma_cream"), superCondensedMagmaCream);
+        recipe.shape("MMM","MMM","MMM");
+        recipe.setIngredient('M', new RecipeChoice.ExactChoice(CondensedHostileMobItems.condensedMagmaCream));
         Bukkit.addRecipe(recipe);
     }
 }

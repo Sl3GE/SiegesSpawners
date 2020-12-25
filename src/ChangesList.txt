@@ -14,6 +14,7 @@ Concentrated Items Added:
 + string
 + ender pearls
 + slime blocks
++ magma cream
 
 Concentrated Items to be Added:
 - chicken
@@ -38,21 +39,21 @@ Spawner Recipes Added:
 + Spider
 + Enderman
 + Slime
++ Magma Cube
 
 Spawner Recipes to be Added:
 - Chicken
-- Bat
 - Cave Spider
 - Witch
 - Ghast
 - Zombie Pigman
 - Squid
 - Mooshroom
+- Villager
 - Giant
 - Silverfish
-- Magma Cube
 - Ocelot
 - Ender Dragon
 - Wither
 - Wolf
-- Villager
+- Bat
