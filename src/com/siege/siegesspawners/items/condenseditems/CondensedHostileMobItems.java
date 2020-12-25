@@ -4,10 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.inventory.ItemFlag;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.RecipeChoice;
-import org.bukkit.inventory.ShapedRecipe;
+import org.bukkit.inventory.*;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class CondensedHostileMobItems {
@@ -15,12 +12,14 @@ public class CondensedHostileMobItems {
     public static ItemStack condensedRottenFlesh;
     public static ItemStack condensedBlazeRod;
     public static ItemStack condensedGunpowder;
+    public static ItemStack condensedString;
 
     public static void init() {
         createCondensedBone();
         createCondensedRottenFlesh();
         createCondensedBlazeRod();
         createCondensedGunpowder();
+        createCondensedString();
     }
 
     private static ItemStack createItem(Material material, int amount, String displayName) {
@@ -69,5 +68,12 @@ public class CondensedHostileMobItems {
         Bukkit.addRecipe(recipe);
     }
 
+    private static void createCondensedString() {
+        condensedString = createItem(Material.STRING, 1, "§2Condensed String");
 
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_string"), condensedString);
+        recipe.shape("SSS","SSS","SSS");
+        recipe.setIngredient('S', new RecipeChoice.ExactChoice(new ItemStack(Material.STRING,1)));
+        Bukkit.addRecipe(recipe);
+    }
 }

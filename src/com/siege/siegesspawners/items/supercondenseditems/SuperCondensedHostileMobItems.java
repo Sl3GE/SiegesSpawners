@@ -17,12 +17,14 @@ public class SuperCondensedHostileMobItems {
     public static ItemStack superCondensedRottenFlesh;
     public static ItemStack superCondensedBlazeRod;
     public static ItemStack superCondensedGunpowder;
+    public static ItemStack superCondensedString;
 
     public static void init() {
         createSuperCondensedBone();
         createSuperCondensedRottenFlesh();
         createSuperCondensedBlazeRod();
         createSuperCondensedGunpowder();
+        createSuperCondensedString();
     }
 
     private static ItemStack createItem(Material material, int amount, String displayName) {
@@ -68,6 +70,15 @@ public class SuperCondensedHostileMobItems {
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("super_condensed_gunpowder"), superCondensedGunpowder);
         recipe.shape("GGG","GGG","GGG");
         recipe.setIngredient('G', new RecipeChoice.ExactChoice(CondensedHostileMobItems.condensedGunpowder));
+        Bukkit.addRecipe(recipe);
+    }
+
+    private static void createSuperCondensedString() {
+        superCondensedString = createItem(Material.STRING, 1, "§1Super Condensed String");
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("super_condensed_string"), superCondensedString);
+        recipe.shape("SSS","SSS","SSS");
+        recipe.setIngredient('S', new RecipeChoice.ExactChoice(CondensedHostileMobItems.condensedString));
         Bukkit.addRecipe(recipe);
     }
 }

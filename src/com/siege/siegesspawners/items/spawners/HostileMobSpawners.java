@@ -17,6 +17,7 @@ public class HostileMobSpawners {
         zombieSpawnerRecipe();
         blazeSpawnerRecipe();
         creeperSpawnerRecipe();
+        spiderSpawnerRecipe();
     }
     private static ItemStack itemCreator(Material material, int amount, EntityType entityType, String displayName) {
         /*
@@ -80,6 +81,16 @@ public class HostileMobSpawners {
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("creeper_spawner"), item);
         recipe.shape("GGG","GIG","GGG");
         recipe.setIngredient('G',  new RecipeChoice.ExactChoice(SuperCondensedHostileMobItems.superCondensedGunpowder));
+        recipe.setIngredient('I',Material.IRON_BARS);
+        Bukkit.addRecipe(recipe);
+    }
+
+    private static void spiderSpawnerRecipe() {
+        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.SPIDER,"§6Spider Spawner");
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("spider_spawner"), item);
+        recipe.shape("SSS","SIS","SSS");
+        recipe.setIngredient('S',  new RecipeChoice.ExactChoice(SuperCondensedHostileMobItems.superCondensedString));
         recipe.setIngredient('I',Material.IRON_BARS);
         Bukkit.addRecipe(recipe);
     }

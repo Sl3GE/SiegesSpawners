@@ -10,11 +10,12 @@ Concentrated Items Added:
 + mutton
 + blaze rods
 + porkchops
++ gunpowder
++ string
 
 Concentrated Items to be Added:
 - chicken
 - feathers
-- gunpowder
 - spider eyes
 - red stone
 - slime balls
@@ -32,12 +33,13 @@ Spawner Recipes Added:
 + Sheep
 + Blaze
 + Pig
++ Creeper
++ Horse
++ Spider
 
 Spawner Recipes to be Added:
 - Chicken
-- Creeper
 - Bat
-- Spider
 - Cave Spider
 - Witch
 - Slime
@@ -50,7 +52,6 @@ Spawner Recipes to be Added:
 - Silverfish
 - Magma Cube
 - Ocelot
-- Horse
 - Ender Dragon
 - Wither
 - Wolf
