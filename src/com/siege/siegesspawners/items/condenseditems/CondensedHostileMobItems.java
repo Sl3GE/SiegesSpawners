@@ -13,6 +13,7 @@ public class CondensedHostileMobItems {
     public static ItemStack condensedBlazeRod;
     public static ItemStack condensedGunpowder;
     public static ItemStack condensedString;
+    public static ItemStack condensedEnderPearl;
 
     public static void init() {
         createCondensedBone();
@@ -20,6 +21,7 @@ public class CondensedHostileMobItems {
         createCondensedBlazeRod();
         createCondensedGunpowder();
         createCondensedString();
+        createCondensedEnderPearl();
     }
 
     private static ItemStack createItem(Material material, int amount, String displayName) {
@@ -74,6 +76,15 @@ public class CondensedHostileMobItems {
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_string"), condensedString);
         recipe.shape("SSS","SSS","SSS");
         recipe.setIngredient('S', new RecipeChoice.ExactChoice(new ItemStack(Material.STRING,1)));
+        Bukkit.addRecipe(recipe);
+    }
+
+    private static void createCondensedEnderPearl() {
+        condensedEnderPearl = createItem(Material.ENDER_PEARL, 1, "§2Condensed Ender Pearl");
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_ender_pearl"), condensedEnderPearl);
+        recipe.shape("EEE","EEE","EEE");
+        recipe.setIngredient('E', new RecipeChoice.ExactChoice(new ItemStack(Material.ENDER_PEARL,1)));
         Bukkit.addRecipe(recipe);
     }
 }

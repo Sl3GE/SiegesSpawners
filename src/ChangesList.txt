@@ -12,6 +12,7 @@ Concentrated Items Added:
 + porkchops
 + gunpowder
 + string
++ ender pearls
 
 Concentrated Items to be Added:
 - chicken
@@ -21,7 +22,6 @@ Concentrated Items to be Added:
 - slime balls
 - gold
 - ink sacs
-- ender pearls
 - neither stars
 
 Spawner Recipes Added:
@@ -36,6 +36,7 @@ Spawner Recipes Added:
 + Creeper
 + Horse
 + Spider
++ Enderman
 
 Spawner Recipes to be Added:
 - Chicken
@@ -46,7 +47,6 @@ Spawner Recipes to be Added:
 - Ghast
 - Zombie Pigman
 - Squid
-- Enderman
 - Mooshroom
 - Giant
 - Silverfish
