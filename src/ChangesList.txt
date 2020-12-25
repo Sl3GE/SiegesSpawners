@@ -13,13 +13,13 @@ Concentrated Items Added:
 + gunpowder
 + string
 + ender pearls
++ slime blocks
 
 Concentrated Items to be Added:
 - chicken
 - feathers
 - spider eyes
 - red stone
-- slime balls
 - gold
 - ink sacs
 - neither stars
@@ -37,13 +37,13 @@ Spawner Recipes Added:
 + Horse
 + Spider
 + Enderman
++ Slime
 
 Spawner Recipes to be Added:
 - Chicken
 - Bat
 - Cave Spider
 - Witch
-- Slime
 - Ghast
 - Zombie Pigman
 - Squid

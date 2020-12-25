@@ -1,5 +1,6 @@
 package com.siege.siegesspawners.items.spawners;
 
+import com.siege.siegesspawners.items.condenseditems.CondensedHostileMobItems;
 import com.siege.siegesspawners.items.supercondenseditems.SuperCondensedHostileMobItems;
 import org.bukkit.*;
 import org.bukkit.block.BlockState;
@@ -19,6 +20,7 @@ public class HostileMobSpawners {
         creeperSpawnerRecipe();
         spiderSpawnerRecipe();
         endermanSpawnerRecipe();
+        slimeSpawnerRecipe();
     }
     private static ItemStack itemCreator(Material material, int amount, EntityType entityType, String displayName) {
         /*
@@ -102,6 +104,16 @@ public class HostileMobSpawners {
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("enderman_spawner"), item);
         recipe.shape("EEE","EIE","EEE");
         recipe.setIngredient('E',  new RecipeChoice.ExactChoice(SuperCondensedHostileMobItems.superCondensedEnderPearl));
+        recipe.setIngredient('I',Material.IRON_BARS);
+        Bukkit.addRecipe(recipe);
+    }
+
+    private static void slimeSpawnerRecipe() {
+        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.SLIME,"§6Slime Spawner");
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("slime_spawner"), item);
+        recipe.shape("SSS","SIS","SSS");
+        recipe.setIngredient('S',  new RecipeChoice.ExactChoice(CondensedHostileMobItems.condensedSlimeBlock));
         recipe.setIngredient('I',Material.IRON_BARS);
         Bukkit.addRecipe(recipe);
     }
