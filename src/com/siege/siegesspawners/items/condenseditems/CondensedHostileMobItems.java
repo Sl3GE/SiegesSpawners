@@ -14,11 +14,13 @@ public class CondensedHostileMobItems {
     public static ItemStack condensedBone;
     public static ItemStack condensedRottenFlesh;
     public static ItemStack condensedBlazeRod;
+    public static ItemStack condensedGunpowder;
 
     public static void init() {
         createCondensedBone();
         createCondensedRottenFlesh();
         createCondensedBlazeRod();
+        createCondensedGunpowder();
     }
 
     private static ItemStack createItem(Material material, int amount, String displayName) {
@@ -57,4 +59,15 @@ public class CondensedHostileMobItems {
         recipe.setIngredient('R', new RecipeChoice.ExactChoice(new ItemStack(Material.BLAZE_ROD,1)));
         Bukkit.addRecipe(recipe);
     }
+
+    private static void createCondensedGunpowder() {
+        condensedGunpowder = createItem(Material.GUNPOWDER, 1, "§2Condensed Gunpowder");
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_gunpowder"), condensedGunpowder);
+        recipe.shape("GGG","GGG","GGG");
+        recipe.setIngredient('G', new RecipeChoice.ExactChoice(new ItemStack(Material.GUNPOWDER,1)));
+        Bukkit.addRecipe(recipe);
+    }
+
+
 }
