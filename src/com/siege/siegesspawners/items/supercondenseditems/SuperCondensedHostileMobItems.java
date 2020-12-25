@@ -23,14 +23,18 @@ public class SuperCondensedHostileMobItems {
         createSuperCondensedBlazeRod();
     }
 
-    private static void createSuperCondensedBone() {
-        ItemStack item = new ItemStack(Material.BONE, 1);
+    private static ItemStack createItem(Material material, int amount, String displayName) {
+        ItemStack item = new ItemStack(material, amount);
         ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("§1Super Condensed Bone");
+        meta.setDisplayName(displayName);
         meta.addEnchant(Enchantment.LUCK,1,true);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         item.setItemMeta(meta);
-        superCondensedBone = item;
+        return item;
+    }
+
+    private static void createSuperCondensedBone() {
+        superCondensedBone = createItem(Material.BONE,1,"§1Super Condensed Bone");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("super_condensed_bone"), superCondensedBone);
         recipe.shape("BBB","BBB","BBB");
@@ -39,13 +43,7 @@ public class SuperCondensedHostileMobItems {
     }
 
     private static void createSuperCondensedRottenFlesh() {
-        ItemStack item = new ItemStack(Material.ROTTEN_FLESH, 1);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("§1Super Condensed Rotten Flesh");
-        meta.addEnchant(Enchantment.LUCK,1,true);
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        item.setItemMeta(meta);
-        superCondensedRottenFlesh = item;
+        superCondensedRottenFlesh = createItem(Material.ROTTEN_FLESH,1,"§1Super Rotten Flesh");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("super_condensed_rotten_flesh"), superCondensedRottenFlesh);
         recipe.shape("FFF","FFF","FFF");
@@ -54,13 +52,7 @@ public class SuperCondensedHostileMobItems {
     }
 
     private static void createSuperCondensedBlazeRod() {
-        ItemStack item = new ItemStack(Material.BLAZE_ROD, 1);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("§1Super Condensed Blaze Rod");
-        meta.addEnchant(Enchantment.LUCK,1,true);
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        item.setItemMeta(meta);
-        superCondensedBlazeRod = item;
+        superCondensedBlazeRod = createItem(Material.BLAZE_ROD,1,"§1Super Blaze Rod");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("super_condensed_blaze_rod"), superCondensedBlazeRod);
         recipe.shape("RRR","RRR","RRR");

@@ -21,14 +21,18 @@ public class CondensedHostileMobItems {
         createCondensedBlazeRod();
     }
 
-    private static void createCondensedBone() {
-        ItemStack item = new ItemStack(Material.BONE, 1);
+    private static ItemStack createItem(Material material, int amount, String displayName) {
+        ItemStack item = new ItemStack(material, amount);
         ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("§2Condensed Bone");
+        meta.setDisplayName(displayName);
         meta.addEnchant(Enchantment.LUCK,1,true);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         item.setItemMeta(meta);
-        condensedBone = item;
+        return item;
+    }
+
+    private static void createCondensedBone() {
+        condensedBone = createItem(Material.BONE, 1, "§2Condensed Bone");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_bone"), condensedBone);
         recipe.shape("BBB","BBB","BBB");
@@ -37,13 +41,7 @@ public class CondensedHostileMobItems {
     }
 
     private static void createCondensedRottenFlesh() {
-        ItemStack item = new ItemStack(Material.ROTTEN_FLESH, 1);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("§2Condensed Rotten Flesh");
-        meta.addEnchant(Enchantment.LUCK,1,true);
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        item.setItemMeta(meta);
-        condensedRottenFlesh = item;
+        condensedRottenFlesh = createItem(Material.BONE, 1, "§2Condensed Rotten Flesh");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_rotten_flesh"), condensedRottenFlesh);
         recipe.shape("FFF","FFF","FFF");
@@ -52,13 +50,7 @@ public class CondensedHostileMobItems {
     }
 
     private static void createCondensedBlazeRod() {
-        ItemStack item = new ItemStack(Material.BLAZE_ROD, 1);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("§2Condensed Blaze Rod");
-        meta.addEnchant(Enchantment.LUCK,1,true);
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        item.setItemMeta(meta);
-        condensedBlazeRod = item;
+        condensedBlazeRod = createItem(Material.BLAZE_ROD, 1, "§2Condensed Blaze Rod");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_blaze_rod"), condensedBlazeRod);
         recipe.shape("RRR","RRR","RRR");

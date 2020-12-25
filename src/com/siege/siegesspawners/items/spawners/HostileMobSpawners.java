@@ -1,6 +1,5 @@
 package com.siege.siegesspawners.items.spawners;
 
-import com.siege.siegesspawners.items.condenseditems.CondensedHostileMobItems;
 import com.siege.siegesspawners.items.supercondenseditems.SuperCondensedHostileMobItems;
 import org.bukkit.*;
 import org.bukkit.block.BlockState;
@@ -18,19 +17,34 @@ public class HostileMobSpawners {
         zombieSpawnerRecipe();
         blazeSpawnerRecipe();
     }
-
-    private static void skeletonSpawnerRecipe() {
-        ItemStack item = new ItemStack(Material.SPAWNER,1);
+    private static ItemStack itemCreator(Material material, int amount, EntityType entityType, String displayName) {
+        /*
+        Get item meta from item
+        Cast item meta to blockstatemeta
+        Get blockstate from blockstatemeta
+        Cast blockstate to creaturespawner
+        Set entitytype of creaturespawner
+        Cast modified creaturespawner to blockstate
+        Blockstatemeta set modified blockstate
+        Cast blockstatemeta to item meta
+        Itemstack set modified item meta
+         */
+        ItemStack item = new ItemStack(material,amount);
         ItemMeta meta = item.getItemMeta();
         BlockStateMeta blockStateMeta = (BlockStateMeta) meta;
         BlockState blockState = blockStateMeta.getBlockState();
         CreatureSpawner creatureSpawner = (CreatureSpawner) blockState;
-        creatureSpawner.setSpawnedType(EntityType.SKELETON);
+        creatureSpawner.setSpawnedType(entityType);
         blockState = (BlockState) creatureSpawner;
         blockStateMeta.setBlockState(blockState);
         meta = (ItemMeta) blockStateMeta;
-        meta.setDisplayName("§6Skeleton Spawner");
+        meta.setDisplayName(displayName);
         item.setItemMeta(meta);
+        return item;
+    }
+
+    private static void skeletonSpawnerRecipe() {
+        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.SKELETON,"§6Skeleton Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("skeleton_spawner"), item);
         recipe.shape("BBB","BIB","BBB");
@@ -40,17 +54,7 @@ public class HostileMobSpawners {
     }
 
     private static void zombieSpawnerRecipe() {
-        ItemStack item = new ItemStack(Material.SPAWNER,1);
-        ItemMeta meta = item.getItemMeta();
-        BlockStateMeta blockStateMeta = (BlockStateMeta) meta;
-        BlockState blockState = blockStateMeta.getBlockState();
-        CreatureSpawner creatureSpawner = (CreatureSpawner) blockState;
-        creatureSpawner.setSpawnedType(EntityType.ZOMBIE);
-        blockState = (BlockState) creatureSpawner;
-        blockStateMeta.setBlockState(blockState);
-        meta = (ItemMeta) blockStateMeta;
-        meta.setDisplayName("§6Zombie Spawner");
-        item.setItemMeta(meta);
+        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.ZOMBIE,"§6Zombie Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("zombie_spawner"), item);
         recipe.shape("FFF","FIF","FFF");
@@ -60,17 +64,7 @@ public class HostileMobSpawners {
     }
 
     private static void blazeSpawnerRecipe() {
-        ItemStack item = new ItemStack(Material.SPAWNER,1);
-        ItemMeta meta = item.getItemMeta();
-        BlockStateMeta blockStateMeta = (BlockStateMeta) meta;
-        BlockState blockState = blockStateMeta.getBlockState();
-        CreatureSpawner creatureSpawner = (CreatureSpawner) blockState;
-        creatureSpawner.setSpawnedType(EntityType.BLAZE);
-        blockState = (BlockState) creatureSpawner;
-        blockStateMeta.setBlockState(blockState);
-        meta = (ItemMeta) blockStateMeta;
-        meta.setDisplayName("§6Blaze Spawner");
-        item.setItemMeta(meta);
+        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.BLAZE,"§6Blaze Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("blaze_spawner"), item);
         recipe.shape("RRR","RIR","RRR");

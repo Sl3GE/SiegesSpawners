@@ -4,6 +4,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.RecipeChoice;
@@ -28,14 +30,18 @@ public class CondensedFriendlyMobItems {
         createCondensedPorkChop();
     }
 
-    private static void createCondensedIronBlock() {
-        ItemStack item = new ItemStack(Material.IRON_BLOCK, 1);
+    private static ItemStack createItem(Material material, int amount, String displayName) {
+        ItemStack item = new ItemStack(material, amount);
         ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("§2Condensed Iron Block");
+        meta.setDisplayName(displayName);
         meta.addEnchant(Enchantment.LUCK,1,true);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         item.setItemMeta(meta);
-        condensedIronBlock = item;
+        return item;
+    }
+
+    private static void createCondensedIronBlock() {
+        condensedIronBlock = createItem(Material.IRON_BLOCK,1,"§2Condensed Iron Block");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_iron_block"), condensedIronBlock);
         recipe.shape("BBB","BBB","BBB");
@@ -44,21 +50,8 @@ public class CondensedFriendlyMobItems {
     }
 
     private static void createCondensedCowDrops() {
-        ItemStack item = new ItemStack(Material.LEATHER, 1);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("§2Condensed Leather");
-        meta.addEnchant(Enchantment.LUCK,1,true);
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        item.setItemMeta(meta);
-        condensedLeather = item;
-
-        item = new ItemStack(Material.BEEF, 1);
-        meta = item.getItemMeta();
-        meta.setDisplayName("§2Condensed Beef");
-        meta.addEnchant(Enchantment.LUCK,1,true);
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        item.setItemMeta(meta);
-        condensedBeef = item;
+        condensedLeather = createItem(Material.LEATHER,1,"§2Condensed Leather");
+        condensedBeef = createItem(Material.BEEF,1,"§2Condensed Beef");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_leather"), condensedLeather);
         recipe.shape("LLL","LLL","LLL");
@@ -72,21 +65,8 @@ public class CondensedFriendlyMobItems {
     }
 
     private static void createCondensedSnowmanDrops() {
-        ItemStack item = new ItemStack(Material.CARVED_PUMPKIN, 1);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("§2Condensed Carved Pumpkin");
-        meta.addEnchant(Enchantment.LUCK,1,true);
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        item.setItemMeta(meta);
-        condensedCarvedPumpkin = item;
-
-        item = new ItemStack(Material.SNOW_BLOCK, 1);
-        meta = item.getItemMeta();
-        meta.setDisplayName("§2Condensed Snow Block");
-        meta.addEnchant(Enchantment.LUCK,1,true);
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        item.setItemMeta(meta);
-        condensedSnowBlock = item;
+        condensedCarvedPumpkin = createItem(Material.CARVED_PUMPKIN,1,"§2Condensed Carved Pumpkin");
+        condensedSnowBlock = createItem(Material.SNOW_BLOCK,1,"§2Condensed Snow Block");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_carved_pumpkin"), condensedCarvedPumpkin);
         recipe.shape("CCC","CCC","CCC");
@@ -100,21 +80,8 @@ public class CondensedFriendlyMobItems {
     }
 
     private static void createCondensedSheepDrops() {
-        ItemStack item = new ItemStack(Material.WHITE_WOOL, 1);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("§2Condensed White Wool");
-        meta.addEnchant(Enchantment.LUCK,1,true);
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        item.setItemMeta(meta);
-        condensedWhiteWool = item;
-
-        item = new ItemStack(Material.MUTTON, 1);
-        meta = item.getItemMeta();
-        meta.setDisplayName("§2Condensed Mutton");
-        meta.addEnchant(Enchantment.LUCK,1,true);
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        item.setItemMeta(meta);
-        condensedMutton = item;
+        condensedWhiteWool = createItem(Material.WHITE_WOOL,1,"§2Condensed White Wool");
+        condensedMutton = createItem(Material.MUTTON,1,"§2Condensed Mutton");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_white_wool"), condensedWhiteWool);
         recipe.shape("WWW","WWW","WWW");
@@ -128,13 +95,7 @@ public class CondensedFriendlyMobItems {
     }
 
     private static void createCondensedPorkChop() {
-        ItemStack item = new ItemStack(Material.PORKCHOP, 1);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("§2Condensed Porkchop");
-        meta.addEnchant(Enchantment.LUCK,1,true);
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        item.setItemMeta(meta);
-        condensedPorkChop = item;
+        condensedPorkChop = createItem(Material.PORKCHOP,1,"§2Condensed Porkchop");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_porkchop"), condensedPorkChop);
         recipe.shape("PPP","PPP","PPP");

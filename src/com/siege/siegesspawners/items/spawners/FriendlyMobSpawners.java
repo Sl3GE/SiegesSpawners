@@ -1,7 +1,6 @@
 package com.siege.siegesspawners.items.spawners;
 
 import com.siege.siegesspawners.items.condenseditems.CondensedFriendlyMobItems;
-import com.siege.siegesspawners.items.condenseditems.CondensedHostileMobItems;
 import com.siege.siegesspawners.items.supercondenseditems.SuperCondensedFriendlyMobItems;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -25,29 +24,34 @@ public class FriendlyMobSpawners {
         pigSpawnerRecipe();
     }
 
-    private static void ironGolemSpawnerRecipe() {
+    private static ItemStack itemCreator(Material material, int amount, EntityType entityType, String displayName) {
         /*
-        Get item meta
-        Cast to blockstatemeta
-        Get blockstate
-        Cast to creaturespawner
-        Set entitytype
+        Get item meta from item
+        Cast item meta to blockstatemeta
+        Get blockstate from blockstatemeta
+        Cast blockstate to creaturespawner
+        Set entitytype of creaturespawner
+        Cast modified creaturespawner to blockstate
         Blockstatemeta set modified blockstate
-        Itemstack set modified itemmeta
-
-        Hope that this helps. For further information use spigot api doc as reference.
+        Cast blockstatemeta to item meta
+        Itemstack set modified item meta
          */
-        ItemStack item = new ItemStack(Material.SPAWNER,1);
+        ItemStack item = new ItemStack(material,amount);
         ItemMeta meta = item.getItemMeta();
         BlockStateMeta blockStateMeta = (BlockStateMeta) meta;
         BlockState blockState = blockStateMeta.getBlockState();
         CreatureSpawner creatureSpawner = (CreatureSpawner) blockState;
-        creatureSpawner.setSpawnedType(EntityType.IRON_GOLEM);
+        creatureSpawner.setSpawnedType(entityType);
         blockState = (BlockState) creatureSpawner;
         blockStateMeta.setBlockState(blockState);
         meta = (ItemMeta) blockStateMeta;
-        meta.setDisplayName("§6Iron Golem Spawner");
+        meta.setDisplayName(displayName);
         item.setItemMeta(meta);
+        return item;
+    }
+
+    private static void ironGolemSpawnerRecipe() {
+        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.IRON_GOLEM,"§6Iron Golem Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("iron_golem_spawner"), item);
         recipe.shape("III","IBI","III");
@@ -57,17 +61,7 @@ public class FriendlyMobSpawners {
     }
 
     private static void cowSpawnerRecipe() {
-        ItemStack item = new ItemStack(Material.SPAWNER,1);
-        ItemMeta meta = item.getItemMeta();
-        BlockStateMeta blockStateMeta = (BlockStateMeta) meta;
-        BlockState blockState = blockStateMeta.getBlockState();
-        CreatureSpawner creatureSpawner = (CreatureSpawner) blockState;
-        creatureSpawner.setSpawnedType(EntityType.COW);
-        blockState = (BlockState) creatureSpawner;
-        blockStateMeta.setBlockState(blockState);
-        meta = (ItemMeta) blockStateMeta;
-        meta.setDisplayName("§6Cow Spawner");
-        item.setItemMeta(meta);
+        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.COW,"§6Cow Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("cow_spawner"), item);
         recipe.shape("LLL","BIB","BBB");
@@ -78,17 +72,7 @@ public class FriendlyMobSpawners {
     }
 
     private static void snowManSpawnerRecipe() {
-        ItemStack item = new ItemStack(Material.SPAWNER,1);
-        ItemMeta meta = item.getItemMeta();
-        BlockStateMeta blockStateMeta = (BlockStateMeta) meta;
-        BlockState blockState = blockStateMeta.getBlockState();
-        CreatureSpawner creatureSpawner = (CreatureSpawner) blockState;
-        creatureSpawner.setSpawnedType(EntityType.SNOWMAN);
-        blockState = (BlockState) creatureSpawner;
-        blockStateMeta.setBlockState(blockState);
-        meta = (ItemMeta) blockStateMeta;
-        meta.setDisplayName("§6Snowman Spawner");
-        item.setItemMeta(meta);
+        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.SNOWMAN,"§6Snowman Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("snowman_spawner"), item);
         recipe.shape("CCC","BIB","BBB");
@@ -99,17 +83,7 @@ public class FriendlyMobSpawners {
     }
 
     private static void sheepSpawnerRecipe() {
-        ItemStack item = new ItemStack(Material.SPAWNER,1);
-        ItemMeta meta = item.getItemMeta();
-        BlockStateMeta blockStateMeta = (BlockStateMeta) meta;
-        BlockState blockState = blockStateMeta.getBlockState();
-        CreatureSpawner creatureSpawner = (CreatureSpawner) blockState;
-        creatureSpawner.setSpawnedType(EntityType.SHEEP);
-        blockState = (BlockState) creatureSpawner;
-        blockStateMeta.setBlockState(blockState);
-        meta = (ItemMeta) blockStateMeta;
-        meta.setDisplayName("§6Sheep Spawner");
-        item.setItemMeta(meta);
+        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.SHEEP,"§6Sheep Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("sheep_spawner"), item);
         recipe.shape("WWW","MIM","MMM");
@@ -120,17 +94,7 @@ public class FriendlyMobSpawners {
     }
 
     private static void pigSpawnerRecipe() {
-        ItemStack item = new ItemStack(Material.SPAWNER,1);
-        ItemMeta meta = item.getItemMeta();
-        BlockStateMeta blockStateMeta = (BlockStateMeta) meta;
-        BlockState blockState = blockStateMeta.getBlockState();
-        CreatureSpawner creatureSpawner = (CreatureSpawner) blockState;
-        creatureSpawner.setSpawnedType(EntityType.PIG);
-        blockState = (BlockState) creatureSpawner;
-        blockStateMeta.setBlockState(blockState);
-        meta = (ItemMeta) blockStateMeta;
-        meta.setDisplayName("§6Pig Spawner");
-        item.setItemMeta(meta);
+        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.PIG,"§6Pig Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("pig_spawner"), item);
         recipe.shape("PPP","PIP","PPP");
