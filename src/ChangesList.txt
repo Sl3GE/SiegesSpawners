@@ -15,6 +15,7 @@ Concentrated Items Added:
 + ender pearls
 + slime blocks
 + magma cream
++ ink sacs
 
 Concentrated Items to be Added:
 - chicken
@@ -22,7 +23,6 @@ Concentrated Items to be Added:
 - spider eyes
 - red stone
 - gold
-- ink sacs
 - neither stars
 
 Spawner Recipes Added:
@@ -40,6 +40,7 @@ Spawner Recipes Added:
 + Enderman
 + Slime
 + Magma Cube
++ Squid
 
 Spawner Recipes to be Added:
 - Chicken
@@ -47,7 +48,6 @@ Spawner Recipes to be Added:
 - Witch
 - Ghast
 - Zombie Pigman
-- Squid
 - Mooshroom
 - Villager
 - Giant

@@ -4,8 +4,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.RecipeChoice;
@@ -21,6 +19,7 @@ public class CondensedFriendlyMobItems {
     public static ItemStack condensedWhiteWool;
     public static ItemStack condensedMutton;
     public static ItemStack condensedPorkChop;
+    public static ItemStack condensedInkSac;
 
     public static void init() {
         createCondensedCowDrops();
@@ -28,6 +27,7 @@ public class CondensedFriendlyMobItems {
         createCondensedSnowmanDrops();
         createCondensedSheepDrops();
         createCondensedPorkChop();
+        createCondensedInkSac();
     }
 
     private static ItemStack createItem(Material material, int amount, String displayName) {
@@ -100,6 +100,15 @@ public class CondensedFriendlyMobItems {
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_porkchop"), condensedPorkChop);
         recipe.shape("PPP","PPP","PPP");
         recipe.setIngredient('P', new RecipeChoice.ExactChoice(new ItemStack(Material.PORKCHOP,1)));
+        Bukkit.addRecipe(recipe);
+    }
+
+    private static void createCondensedInkSac() {
+        condensedInkSac = createItem(Material.INK_SAC,1,"§2Condensed Ink Sac");
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_ink_sac"), condensedInkSac);
+        recipe.shape("III","III","III");
+        recipe.setIngredient('I', new RecipeChoice.ExactChoice(new ItemStack(Material.INK_SAC,1)));
         Bukkit.addRecipe(recipe);
     }
 }

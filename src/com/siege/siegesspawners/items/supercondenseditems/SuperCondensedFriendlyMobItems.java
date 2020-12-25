@@ -19,12 +19,14 @@ public class SuperCondensedFriendlyMobItems {
     public static ItemStack superCondensedWhiteWool;
     public static ItemStack superCondensedMutton;
     public static ItemStack superCondensedPorkChop;
+    public static ItemStack superCondensedInkSac;
 
     public static void init() {
         createSuperCondensedCowDrops();
         createSuperCondensedSnowmanDrops();
         superCreateCondensedSheepDrops();
         createSuperCondensedPorkChop();
+        createSuperCondensedInkSac();
     }
 
     private static ItemStack createItem(Material material, int amount, String displayName) {
@@ -87,6 +89,15 @@ public class SuperCondensedFriendlyMobItems {
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("super_condensed_porkchop"), superCondensedPorkChop);
         recipe.shape("PPP","PPP","PPP");
         recipe.setIngredient('P', new RecipeChoice.ExactChoice(CondensedFriendlyMobItems.condensedPorkChop));
+        Bukkit.addRecipe(recipe);
+    }
+
+    private static void createSuperCondensedInkSac() {
+        superCondensedInkSac = createItem(Material.INK_SAC,1,"§1Super Condensed Ink Sac");
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("super_condensed_ink_sac"), superCondensedInkSac);
+        recipe.shape("III","III","III");
+        recipe.setIngredient('I', new RecipeChoice.ExactChoice(CondensedFriendlyMobItems.condensedInkSac));
         Bukkit.addRecipe(recipe);
     }
 }

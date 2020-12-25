@@ -23,6 +23,7 @@ public class FriendlyMobSpawners {
         sheepSpawnerRecipe();
         pigSpawnerRecipe();
         horseSpawnerRecipe();
+        squidSpawnerRecipe();
     }
 
     private static ItemStack itemCreator(Material material, int amount, EntityType entityType, String displayName) {
@@ -110,6 +111,16 @@ public class FriendlyMobSpawners {
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("horse_spawner"), item);
         recipe.shape("LLL","LIL","LLL");
         recipe.setIngredient('L', new RecipeChoice.ExactChoice(SuperCondensedFriendlyMobItems.superCondensedLeather));
+        recipe.setIngredient('I',Material.IRON_BARS);
+        Bukkit.addRecipe(recipe);
+    }
+
+    private static void squidSpawnerRecipe() {
+        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.SQUID,"§6Squid Spawner");
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("squid_spawner"), item);
+        recipe.shape("SSS","SIS","SSS");
+        recipe.setIngredient('S', new RecipeChoice.ExactChoice(SuperCondensedFriendlyMobItems.superCondensedInkSac));
         recipe.setIngredient('I',Material.IRON_BARS);
         Bukkit.addRecipe(recipe);
     }
