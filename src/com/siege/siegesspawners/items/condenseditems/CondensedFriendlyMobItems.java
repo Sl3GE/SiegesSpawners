@@ -22,6 +22,7 @@ public class CondensedFriendlyMobItems {
     public static ItemStack condensedInkSac;
     public static ItemStack condensedChicken;
     public static ItemStack condensedFeather;
+    public static ItemStack condensedEmeraldBlock;
 
     public static void init() {
         createCondensedCowDrops();
@@ -31,6 +32,7 @@ public class CondensedFriendlyMobItems {
         createCondensedPorkChop();
         createCondensedInkSac();
         createCondensedChickenDrops();
+        createCondensedEmeraldBlock();
     }
 
     private static ItemStack createItem(Material material, int amount, String displayName) {
@@ -128,5 +130,14 @@ public class CondensedFriendlyMobItems {
         recipe.shape("FFF","FFF","FFF");
         recipe.setIngredient('F', new RecipeChoice.ExactChoice(new ItemStack(Material.FEATHER,1)));
         Bukkit.getServer().addRecipe(recipe);
+    }
+
+    private static void createCondensedEmeraldBlock() {
+        condensedEmeraldBlock = createItem(Material.EMERALD_BLOCK,1,"§2Condensed Emerald Block");
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_emerald_block"), condensedEmeraldBlock);
+        recipe.shape("EEE","EEE","EEE");
+        recipe.setIngredient('E', new RecipeChoice.ExactChoice(new ItemStack(Material.EMERALD_BLOCK,1)));
+        Bukkit.addRecipe(recipe);
     }
 }

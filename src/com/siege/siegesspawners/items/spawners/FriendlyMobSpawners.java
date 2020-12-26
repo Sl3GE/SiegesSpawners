@@ -25,6 +25,7 @@ public class FriendlyMobSpawners {
         horseSpawnerRecipe();
         squidSpawnerRecipe();
         chickenSpawnerRecipe();
+        villagerSpawnerRecipe();
     }
 
     private static ItemStack itemCreator(Material material, int amount, EntityType entityType, String displayName) {
@@ -133,6 +134,16 @@ public class FriendlyMobSpawners {
         recipe.shape("FFF","CIC","CCC");
         recipe.setIngredient('F', new RecipeChoice.ExactChoice(SuperCondensedFriendlyMobItems.superCondensedFeather));
         recipe.setIngredient('C', new RecipeChoice.ExactChoice(SuperCondensedFriendlyMobItems.superCondensedChicken));
+        recipe.setIngredient('I',Material.IRON_BARS);
+        Bukkit.addRecipe(recipe);
+    }
+
+    private static void villagerSpawnerRecipe() {
+        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.VILLAGER,"§6Villager Spawner");
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("villager_spawner"), item);
+        recipe.shape(" E ","EIE"," E ");
+        recipe.setIngredient('E', new RecipeChoice.ExactChoice(CondensedFriendlyMobItems.condensedEmeraldBlock));
         recipe.setIngredient('I',Material.IRON_BARS);
         Bukkit.addRecipe(recipe);
     }
