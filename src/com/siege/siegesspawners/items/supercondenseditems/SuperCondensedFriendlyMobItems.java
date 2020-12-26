@@ -20,6 +20,8 @@ public class SuperCondensedFriendlyMobItems {
     public static ItemStack superCondensedMutton;
     public static ItemStack superCondensedPorkChop;
     public static ItemStack superCondensedInkSac;
+    public static ItemStack superCondensedChicken;
+    public static ItemStack superCondensedFeather;
 
     public static void init() {
         createSuperCondensedCowDrops();
@@ -27,6 +29,7 @@ public class SuperCondensedFriendlyMobItems {
         superCreateCondensedSheepDrops();
         createSuperCondensedPorkChop();
         createSuperCondensedInkSac();
+        superCreateCondensedChickenDrops();
     }
 
     private static ItemStack createItem(Material material, int amount, String displayName) {
@@ -83,6 +86,7 @@ public class SuperCondensedFriendlyMobItems {
         recipe.setIngredient('M', new RecipeChoice.ExactChoice(CondensedFriendlyMobItems.condensedMutton));
         Bukkit.getServer().addRecipe(recipe);
     }
+
     private static void createSuperCondensedPorkChop() {
         superCondensedPorkChop = createItem(Material.PORKCHOP,1,"§1Super Condensed Porkchop");
 
@@ -99,5 +103,20 @@ public class SuperCondensedFriendlyMobItems {
         recipe.shape("III","III","III");
         recipe.setIngredient('I', new RecipeChoice.ExactChoice(CondensedFriendlyMobItems.condensedInkSac));
         Bukkit.addRecipe(recipe);
+    }
+
+    private static void superCreateCondensedChickenDrops() {
+        superCondensedChicken = createItem(Material.CHICKEN,1,"§1Super Condensed Chicken");
+        superCondensedFeather = createItem(Material.FEATHER,1,"§1Super Condensed Feather");
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("super_condensed_chicken"), superCondensedChicken);
+        recipe.shape("CCC","CCC","CCC");
+        recipe.setIngredient('C', new RecipeChoice.ExactChoice(CondensedFriendlyMobItems.condensedChicken));
+        Bukkit.getServer().addRecipe(recipe);
+
+        recipe = new ShapedRecipe(NamespacedKey.minecraft("super_condensed_feather"), superCondensedFeather);
+        recipe.shape("FFF","FFF","FFF");
+        recipe.setIngredient('F', new RecipeChoice.ExactChoice(CondensedFriendlyMobItems.condensedFeather));
+        Bukkit.getServer().addRecipe(recipe);
     }
 }

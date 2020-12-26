@@ -16,10 +16,10 @@ Concentrated Items Added:
 + slime blocks
 + magma cream
 + ink sacs
++ chicken
++ feathers
 
 Concentrated Items to be Added:
-- chicken
-- feathers
 - spider eyes
 - red stone
 - gold
@@ -41,9 +41,9 @@ Spawner Recipes Added:
 + Slime
 + Magma Cube
 + Squid
++ Chicken
 
 Spawner Recipes to be Added:
-- Chicken
 - Cave Spider
 - Witch
 - Ghast

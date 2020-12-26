@@ -20,6 +20,8 @@ public class CondensedFriendlyMobItems {
     public static ItemStack condensedMutton;
     public static ItemStack condensedPorkChop;
     public static ItemStack condensedInkSac;
+    public static ItemStack condensedChicken;
+    public static ItemStack condensedFeather;
 
     public static void init() {
         createCondensedCowDrops();
@@ -28,6 +30,7 @@ public class CondensedFriendlyMobItems {
         createCondensedSheepDrops();
         createCondensedPorkChop();
         createCondensedInkSac();
+        createCondensedChickenDrops();
     }
 
     private static ItemStack createItem(Material material, int amount, String displayName) {
@@ -110,5 +113,20 @@ public class CondensedFriendlyMobItems {
         recipe.shape("III","III","III");
         recipe.setIngredient('I', new RecipeChoice.ExactChoice(new ItemStack(Material.INK_SAC,1)));
         Bukkit.addRecipe(recipe);
+    }
+
+    private static void createCondensedChickenDrops() {
+        condensedChicken = createItem(Material.CHICKEN,1,"§2Condensed Chicken");
+        condensedFeather = createItem(Material.FEATHER,1,"§2Condensed Feather");
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_chicken"), condensedChicken);
+        recipe.shape("CCC","CCC","CCC");
+        recipe.setIngredient('C', new RecipeChoice.ExactChoice(new ItemStack(Material.CHICKEN,1)));
+        Bukkit.getServer().addRecipe(recipe);
+
+        recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_feather"), condensedFeather);
+        recipe.shape("FFF","FFF","FFF");
+        recipe.setIngredient('F', new RecipeChoice.ExactChoice(new ItemStack(Material.FEATHER,1)));
+        Bukkit.getServer().addRecipe(recipe);
     }
 }
