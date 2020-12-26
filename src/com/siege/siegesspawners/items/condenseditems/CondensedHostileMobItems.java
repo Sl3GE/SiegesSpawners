@@ -16,6 +16,7 @@ public class CondensedHostileMobItems {
     public static ItemStack condensedEnderPearl;
     public static ItemStack condensedSlimeBlock;
     public static ItemStack condensedMagmaCream;
+    public static ItemStack condensedGhastTear;
 
     public static void init() {
         createCondensedBone();
@@ -26,6 +27,7 @@ public class CondensedHostileMobItems {
         createCondensedEnderPearl();
         createCondensedSlimeBlock();
         createCondensedMagmaCream();
+        createCondensedGhastTear();
     }
 
     private static ItemStack createItem(Material material, int amount, String displayName) {
@@ -107,6 +109,15 @@ public class CondensedHostileMobItems {
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_magma_cream"), condensedMagmaCream);
         recipe.shape("MMM","MMM","MMM");
         recipe.setIngredient('M', new RecipeChoice.ExactChoice(new ItemStack(Material.MAGMA_CREAM,1)));
+        Bukkit.addRecipe(recipe);
+    }
+
+    private static void createCondensedGhastTear() {
+        condensedGhastTear = createItem(Material.GHAST_TEAR, 1, "§2Condensed Ghast Tear");
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_ghast_tear"), condensedGhastTear);
+        recipe.shape("GGG","GGG","GGG");
+        recipe.setIngredient('G', new RecipeChoice.ExactChoice(new ItemStack(Material.GHAST_TEAR,1)));
         Bukkit.addRecipe(recipe);
     }
 }

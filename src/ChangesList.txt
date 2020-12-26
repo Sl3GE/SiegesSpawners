@@ -18,6 +18,7 @@ Concentrated Items Added:
 + ink sacs
 + chicken
 + feathers
++ ghast tear
 
 Concentrated Items to be Added:
 - spider eyes
@@ -42,11 +43,11 @@ Spawner Recipes Added:
 + Magma Cube
 + Squid
 + Chicken
++ Ghast
 
 Spawner Recipes to be Added:
 - Cave Spider
 - Witch
-- Ghast
 - Zombie Pigman
 - Mooshroom
 - Villager
