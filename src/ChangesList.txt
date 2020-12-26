@@ -19,6 +19,7 @@ Concentrated Items Added:
 + chicken
 + feathers
 + ghast tear
++ gold block
 
 Concentrated Items to be Added:
 - spider eyes
@@ -44,11 +45,11 @@ Spawner Recipes Added:
 + Squid
 + Chicken
 + Ghast
++ Zombified Piglin
 
 Spawner Recipes to be Added:
 - Cave Spider
 - Witch
-- Zombie Pigman
 - Mooshroom
 - Villager
 - Giant
