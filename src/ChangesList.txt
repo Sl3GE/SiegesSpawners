@@ -23,10 +23,10 @@ Concentrated Items Added:
 + nether stars
 + emerald blocks
 + wither skeleton skull
++ block of redstone
 
 Concentrated Items to be Added:
 - spider eyes
-- red stone
 
 Spawner Recipes Added:
 + Cow
@@ -50,10 +50,10 @@ Spawner Recipes Added:
 + Wither
 + Villager
 + Wither Skeleton
++ Witch
 
 Spawner Recipes to be Added:
 - Cave Spider
-- Witch
 - Mooshroom
 - Giant
 - Silverfish

@@ -20,6 +20,7 @@ public class CondensedHostileMobItems {
     public static ItemStack condensedGoldBlock;
     public static ItemStack condensedNetherStar;
     public static ItemStack condensedWitherSkeletonSkull;
+    public static ItemStack condensedBlockOfRedstone;
 
     public static void init() {
         createCondensedBone();
@@ -34,6 +35,7 @@ public class CondensedHostileMobItems {
         createCondensedGoldBlock();
         createCondensedNetherStar();
         createCondensedWitherSkeletonSkull();
+        createCondensedBlockOfRedstone();
     }
 
     private static ItemStack createItem(Material material, int amount, String displayName) {
@@ -151,6 +153,15 @@ public class CondensedHostileMobItems {
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_wither_skeleton_skull"), condensedWitherSkeletonSkull);
         recipe.shape("WWW","WWW","WWW");
         recipe.setIngredient('W', new RecipeChoice.ExactChoice(new ItemStack(Material.WITHER_SKELETON_SKULL,1)));
+        Bukkit.addRecipe(recipe);
+    }
+
+    private static void createCondensedBlockOfRedstone() {
+        condensedBlockOfRedstone = createItem(Material.REDSTONE_BLOCK, 1, "§2Condensed Block Of Redstone");
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_block_of_redstone"), condensedBlockOfRedstone);
+        recipe.shape("RRR","RRR","RRR");
+        recipe.setIngredient('R', new RecipeChoice.ExactChoice(new ItemStack(Material.REDSTONE_BLOCK,1)));
         Bukkit.addRecipe(recipe);
     }
 }
