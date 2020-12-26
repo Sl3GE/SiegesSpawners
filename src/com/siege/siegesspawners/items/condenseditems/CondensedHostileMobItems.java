@@ -18,6 +18,7 @@ public class CondensedHostileMobItems {
     public static ItemStack condensedMagmaCream;
     public static ItemStack condensedGhastTear;
     public static ItemStack condensedGoldBlock;
+    public static ItemStack condensedNetherStar;
 
     public static void init() {
         createCondensedBone();
@@ -30,6 +31,7 @@ public class CondensedHostileMobItems {
         createCondensedMagmaCream();
         createCondensedGhastTear();
         createCondensedGoldBlock();
+        createCondensedNetherStar();
     }
 
     private static ItemStack createItem(Material material, int amount, String displayName) {
@@ -129,6 +131,15 @@ public class CondensedHostileMobItems {
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_gold_block"), condensedGoldBlock);
         recipe.shape("GGG","GGG","GGG");
         recipe.setIngredient('G', new RecipeChoice.ExactChoice(new ItemStack(Material.GOLD_BLOCK,1)));
+        Bukkit.addRecipe(recipe);
+    }
+
+    private static void createCondensedNetherStar() {
+        condensedNetherStar = createItem(Material.NETHER_STAR, 1, "§2Condensed Nether Star");
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_nether_star"), condensedNetherStar);
+        recipe.shape("NNN","NNN","NNN");
+        recipe.setIngredient('N', new RecipeChoice.ExactChoice(new ItemStack(Material.NETHER_STAR,1)));
         Bukkit.addRecipe(recipe);
     }
 }

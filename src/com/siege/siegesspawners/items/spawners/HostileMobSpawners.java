@@ -24,6 +24,7 @@ public class HostileMobSpawners {
         magmaCubeSpawnerRecipe();
         ghastSpawnerRecipe();
         zombifiedPiglinSpawnerRecipe();
+        netherStarSpawnerRecipe();
     }
     private static ItemStack itemCreator(Material material, int amount, EntityType entityType, String displayName) {
         /*
@@ -147,6 +148,16 @@ public class HostileMobSpawners {
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("zombie_piglin_spawner"), item);
         recipe.shape("GGG","GIG","GGG");
         recipe.setIngredient('G',  new RecipeChoice.ExactChoice(CondensedHostileMobItems.condensedGoldBlock));
+        recipe.setIngredient('I',Material.IRON_BARS);
+        Bukkit.addRecipe(recipe);
+    }
+
+    private static void netherStarSpawnerRecipe() {
+        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.WITHER,"§6Wither Spawner");
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("wither_spawner"), item);
+        recipe.shape("NNN","NIN","NNN");
+        recipe.setIngredient('N',  new RecipeChoice.ExactChoice(CondensedHostileMobItems.condensedNetherStar));
         recipe.setIngredient('I',Material.IRON_BARS);
         Bukkit.addRecipe(recipe);
     }

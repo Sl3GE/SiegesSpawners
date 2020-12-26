@@ -20,6 +20,7 @@ Concentrated Items Added:
 + feathers
 + ghast tear
 + gold block
++ nether stars
 
 Concentrated Items to be Added:
 - spider eyes
@@ -46,16 +47,17 @@ Spawner Recipes Added:
 + Chicken
 + Ghast
 + Zombified Piglin
++ Wither
 
 Spawner Recipes to be Added:
 - Cave Spider
 - Witch
 - Mooshroom
+- Wither Skeleton
 - Villager
 - Giant
 - Silverfish
 - Ocelot
 - Ender Dragon
-- Wither
 - Wolf
 - Bat
