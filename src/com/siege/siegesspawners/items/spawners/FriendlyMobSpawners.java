@@ -28,7 +28,7 @@ public class FriendlyMobSpawners {
         villagerSpawnerRecipe();
     }
 
-    private static ItemStack itemCreator(Material material, int amount, EntityType entityType, String displayName) {
+    public static ItemStack itemCreator(Material material, int amount, EntityType entityType, String displayName) {
         /*
         Get item meta from item
         Cast item meta to blockstatemeta

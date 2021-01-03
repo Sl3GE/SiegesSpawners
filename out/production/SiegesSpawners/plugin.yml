@@ -3,3 +3,7 @@ version: 1.0
 author: Siege
 main: com.siege.siegesspawners.SiegesSpawners
 api-version: 1.14
+commands:
+  giveSpawner:
+    description: Give Player specified amount of specified spanwer.
+    usage: /giveSpawner <entityType> <amount>
