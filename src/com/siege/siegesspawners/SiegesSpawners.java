@@ -1,6 +1,7 @@
 package com.siege.siegesspawners;
 
 import com.siege.siegesspawners.commands.GiveCommand;
+import com.siege.siegesspawners.events.SiegesSpawnersEvents;
 import com.siege.siegesspawners.items.condenseditems.CondensedFriendlyMobItems;
 import com.siege.siegesspawners.items.condenseditems.CondensedHostileMobItems;
 import com.siege.siegesspawners.items.spawners.FriendlyMobSpawners;
@@ -20,6 +21,9 @@ public class SiegesSpawners extends JavaPlugin {
         SuperCondensedFriendlyMobItems.init();
         HostileMobSpawners.init();
         FriendlyMobSpawners.init();
+
+        getServer().getPluginManager().registerEvents(new SiegesSpawnersEvents(), this);
+
         GiveCommand giveCommand = new GiveCommand();
         getCommand("giveSpawner").setExecutor(giveCommand);
 
