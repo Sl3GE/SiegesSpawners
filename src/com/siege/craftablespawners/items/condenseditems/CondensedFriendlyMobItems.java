@@ -1,4 +1,4 @@
-package com.siege.siegesspawners.items.condenseditems;
+package com.siege.craftablespawners.items.condenseditems;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;

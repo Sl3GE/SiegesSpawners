@@ -1,7 +1,7 @@
-package com.siege.siegesspawners.items.spawners;
+package com.siege.craftablespawners.items.spawners;
 
-import com.siege.siegesspawners.items.condenseditems.CondensedHostileMobItems;
-import com.siege.siegesspawners.items.supercondenseditems.SuperCondensedHostileMobItems;
+import com.siege.craftablespawners.items.condenseditems.CondensedHostileMobItems;
+import com.siege.craftablespawners.items.supercondenseditems.SuperCondensedHostileMobItems;
 import org.bukkit.*;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.CreatureSpawner;

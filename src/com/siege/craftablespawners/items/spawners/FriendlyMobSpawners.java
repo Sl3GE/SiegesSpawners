@@ -1,7 +1,7 @@
-package com.siege.siegesspawners.items.spawners;
+package com.siege.craftablespawners.items.spawners;
 
-import com.siege.siegesspawners.items.condenseditems.CondensedFriendlyMobItems;
-import com.siege.siegesspawners.items.supercondenseditems.SuperCondensedFriendlyMobItems;
+import com.siege.craftablespawners.items.condenseditems.CondensedFriendlyMobItems;
+import com.siege.craftablespawners.items.supercondenseditems.SuperCondensedFriendlyMobItems;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;

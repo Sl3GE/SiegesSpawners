@@ -1,7 +1,7 @@
-name: SiegesSpawners
+name: CraftableSpawners
 version: 1.0
 author: Siege
-main: com.siege.siegesspawners.SiegesSpawners
+main: com.siege.craftablespawners.CraftableSpawners
 api-version: 1.14
 commands:
   giveSpawner:

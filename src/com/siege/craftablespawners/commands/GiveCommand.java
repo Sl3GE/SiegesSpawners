@@ -1,6 +1,6 @@
-package com.siege.siegesspawners.commands;
+package com.siege.craftablespawners.commands;
 
-import com.siege.siegesspawners.items.spawners.FriendlyMobSpawners;
+import com.siege.craftablespawners.items.spawners.FriendlyMobSpawners;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
