@@ -1,4 +1,4 @@
-# CraftableSpawners
+# Craftable Spawners
 Minecraft Plugin for Spawners
 
 Project is a 1.16.1 Minecraft Plugin
