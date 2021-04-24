@@ -1,5 +1,6 @@
 package com.siege.craftablespawners.items.supercondenseditems;
 
+import com.siege.craftablespawners.items.AbstractedCreationMethods;
 import com.siege.craftablespawners.items.condenseditems.CondensedHostileMobItems;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -33,18 +34,8 @@ public class SuperCondensedHostileMobItems {
         createSuperCondensedBlockOfRedstone();
     }
 
-    private static ItemStack createItem(Material material, int amount, String displayName) {
-        ItemStack item = new ItemStack(material, amount);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName(displayName);
-        meta.addEnchant(Enchantment.LUCK,1,true);
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        item.setItemMeta(meta);
-        return item;
-    }
-
     private static void createSuperCondensedBone() {
-        superCondensedBone = createItem(Material.BONE,1,"§1Super Condensed Bone");
+        superCondensedBone = AbstractedCreationMethods.createItem(Material.BONE,1,"§1Super Condensed Bone");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("super_condensed_bone"), superCondensedBone);
         recipe.shape("BBB","BBB","BBB");
@@ -53,7 +44,7 @@ public class SuperCondensedHostileMobItems {
     }
 
     private static void createSuperCondensedRottenFlesh() {
-        superCondensedRottenFlesh = createItem(Material.ROTTEN_FLESH,1,"§1Super Rotten Flesh");
+        superCondensedRottenFlesh = AbstractedCreationMethods.createItem(Material.ROTTEN_FLESH,1,"§1Super Rotten Flesh");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("super_condensed_rotten_flesh"), superCondensedRottenFlesh);
         recipe.shape("FFF","FFF","FFF");
@@ -62,7 +53,7 @@ public class SuperCondensedHostileMobItems {
     }
 
     private static void createSuperCondensedBlazeRod() {
-        superCondensedBlazeRod = createItem(Material.BLAZE_ROD,1,"§1Super Blaze Rod");
+        superCondensedBlazeRod = AbstractedCreationMethods.createItem(Material.BLAZE_ROD,1,"§1Super Blaze Rod");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("super_condensed_blaze_rod"), superCondensedBlazeRod);
         recipe.shape("RRR","RRR","RRR");
@@ -71,7 +62,7 @@ public class SuperCondensedHostileMobItems {
     }
 
     private static void createSuperCondensedGunpowder() {
-        superCondensedGunpowder = createItem(Material.GUNPOWDER, 1, "§1Super Condensed Gunpowder");
+        superCondensedGunpowder = AbstractedCreationMethods.createItem(Material.GUNPOWDER, 1, "§1Super Condensed Gunpowder");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("super_condensed_gunpowder"), superCondensedGunpowder);
         recipe.shape("GGG","GGG","GGG");
@@ -80,7 +71,7 @@ public class SuperCondensedHostileMobItems {
     }
 
     private static void createSuperCondensedString() {
-        superCondensedString = createItem(Material.STRING, 1, "§1Super Condensed String");
+        superCondensedString = AbstractedCreationMethods.createItem(Material.STRING, 1, "§1Super Condensed String");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("super_condensed_string"), superCondensedString);
         recipe.shape("SSS","SSS","SSS");
@@ -89,7 +80,7 @@ public class SuperCondensedHostileMobItems {
     }
 
     private static void createSuperCondensedEnderPearl() {
-        superCondensedEnderPearl = createItem(Material.ENDER_PEARL, 1, "§1Super Condensed Ender Pearl");
+        superCondensedEnderPearl = AbstractedCreationMethods.createItem(Material.ENDER_PEARL, 1, "§1Super Condensed Ender Pearl");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("super_condensed_ender_pearl"), superCondensedEnderPearl);
         recipe.shape("EEE","EEE","EEE");
@@ -98,7 +89,7 @@ public class SuperCondensedHostileMobItems {
     }
 
     private static void createSuperCondensedMagmaCream() {
-        superCondensedMagmaCream = createItem(Material.MAGMA_CREAM, 1, "§1Super Condensed Magma Cream");
+        superCondensedMagmaCream = AbstractedCreationMethods.createItem(Material.MAGMA_CREAM, 1, "§1Super Condensed Magma Cream");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("super_condensed_magma_cream"), superCondensedMagmaCream);
         recipe.shape("MMM","MMM","MMM");
@@ -107,7 +98,7 @@ public class SuperCondensedHostileMobItems {
     }
 
     private static void createSuperCondensedBlockOfRedstone() {
-        superCondensedBlockOfRedstone = createItem(Material.REDSTONE_BLOCK, 1, "§1Super Condensed Block Of Redstone");
+        superCondensedBlockOfRedstone = AbstractedCreationMethods.createItem(Material.REDSTONE_BLOCK, 1, "§1Super Condensed Block Of Redstone");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("super_condensed_block_of_redstone"), superCondensedBlockOfRedstone);
         recipe.shape("RRR","RRR","RRR");

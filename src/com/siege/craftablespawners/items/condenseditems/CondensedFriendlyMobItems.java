@@ -1,5 +1,6 @@
 package com.siege.craftablespawners.items.condenseditems;
 
+import com.siege.craftablespawners.items.AbstractedCreationMethods;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -35,18 +36,8 @@ public class CondensedFriendlyMobItems {
         createCondensedEmeraldBlock();
     }
 
-    private static ItemStack createItem(Material material, int amount, String displayName) {
-        ItemStack item = new ItemStack(material, amount);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName(displayName);
-        meta.addEnchant(Enchantment.LUCK,1,true);
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        item.setItemMeta(meta);
-        return item;
-    }
-
     private static void createCondensedIronBlock() {
-        condensedIronBlock = createItem(Material.IRON_BLOCK,1,"§2Condensed Iron Block");
+        condensedIronBlock = AbstractedCreationMethods.createItem(Material.IRON_BLOCK,1,"§2Condensed Iron Block");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_iron_block"), condensedIronBlock);
         recipe.shape("BBB","BBB","BBB");
@@ -55,8 +46,8 @@ public class CondensedFriendlyMobItems {
     }
 
     private static void createCondensedCowDrops() {
-        condensedLeather = createItem(Material.LEATHER,1,"§2Condensed Leather");
-        condensedBeef = createItem(Material.BEEF,1,"§2Condensed Beef");
+        condensedLeather = AbstractedCreationMethods.createItem(Material.LEATHER,1,"§2Condensed Leather");
+        condensedBeef = AbstractedCreationMethods.createItem(Material.BEEF,1,"§2Condensed Beef");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_leather"), condensedLeather);
         recipe.shape("LLL","LLL","LLL");
@@ -70,8 +61,8 @@ public class CondensedFriendlyMobItems {
     }
 
     private static void createCondensedSnowmanDrops() {
-        condensedCarvedPumpkin = createItem(Material.CARVED_PUMPKIN,1,"§2Condensed Carved Pumpkin");
-        condensedSnowBlock = createItem(Material.SNOW_BLOCK,1,"§2Condensed Snow Block");
+        condensedCarvedPumpkin = AbstractedCreationMethods.createItem(Material.CARVED_PUMPKIN,1,"§2Condensed Carved Pumpkin");
+        condensedSnowBlock = AbstractedCreationMethods.createItem(Material.SNOW_BLOCK,1,"§2Condensed Snow Block");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_carved_pumpkin"), condensedCarvedPumpkin);
         recipe.shape("CCC","CCC","CCC");
@@ -85,8 +76,8 @@ public class CondensedFriendlyMobItems {
     }
 
     private static void createCondensedSheepDrops() {
-        condensedWhiteWool = createItem(Material.WHITE_WOOL,1,"§2Condensed White Wool");
-        condensedMutton = createItem(Material.MUTTON,1,"§2Condensed Mutton");
+        condensedWhiteWool = AbstractedCreationMethods.createItem(Material.WHITE_WOOL,1,"§2Condensed White Wool");
+        condensedMutton = AbstractedCreationMethods.createItem(Material.MUTTON,1,"§2Condensed Mutton");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_white_wool"), condensedWhiteWool);
         recipe.shape("WWW","WWW","WWW");
@@ -100,7 +91,7 @@ public class CondensedFriendlyMobItems {
     }
 
     private static void createCondensedPorkChop() {
-        condensedPorkChop = createItem(Material.PORKCHOP,1,"§2Condensed Porkchop");
+        condensedPorkChop = AbstractedCreationMethods.createItem(Material.PORKCHOP,1,"§2Condensed Porkchop");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_porkchop"), condensedPorkChop);
         recipe.shape("PPP","PPP","PPP");
@@ -109,7 +100,7 @@ public class CondensedFriendlyMobItems {
     }
 
     private static void createCondensedInkSac() {
-        condensedInkSac = createItem(Material.INK_SAC,1,"§2Condensed Ink Sac");
+        condensedInkSac = AbstractedCreationMethods.createItem(Material.INK_SAC,1,"§2Condensed Ink Sac");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_ink_sac"), condensedInkSac);
         recipe.shape("III","III","III");
@@ -118,8 +109,8 @@ public class CondensedFriendlyMobItems {
     }
 
     private static void createCondensedChickenDrops() {
-        condensedChicken = createItem(Material.CHICKEN,1,"§2Condensed Chicken");
-        condensedFeather = createItem(Material.FEATHER,1,"§2Condensed Feather");
+        condensedChicken = AbstractedCreationMethods.createItem(Material.CHICKEN,1,"§2Condensed Chicken");
+        condensedFeather = AbstractedCreationMethods.createItem(Material.FEATHER,1,"§2Condensed Feather");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_chicken"), condensedChicken);
         recipe.shape("CCC","CCC","CCC");
@@ -133,7 +124,7 @@ public class CondensedFriendlyMobItems {
     }
 
     private static void createCondensedEmeraldBlock() {
-        condensedEmeraldBlock = createItem(Material.EMERALD_BLOCK,1,"§2Condensed Emerald Block");
+        condensedEmeraldBlock = AbstractedCreationMethods.createItem(Material.EMERALD_BLOCK,1,"§2Condensed Emerald Block");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_emerald_block"), condensedEmeraldBlock);
         recipe.shape("EEE","EEE","EEE");

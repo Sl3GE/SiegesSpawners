@@ -6,6 +6,7 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.*;
 import org.bukkit.inventory.meta.ItemMeta;
+import com.siege.craftablespawners.items.AbstractedCreationMethods;
 
 public class CondensedHostileMobItems {
     public static ItemStack condensedBone;
@@ -38,18 +39,8 @@ public class CondensedHostileMobItems {
         createCondensedBlockOfRedstone();
     }
 
-    private static ItemStack createItem(Material material, int amount, String displayName) {
-        ItemStack item = new ItemStack(material, amount);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName(displayName);
-        meta.addEnchant(Enchantment.LUCK,1,true);
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        item.setItemMeta(meta);
-        return item;
-    }
-
     private static void createCondensedBone() {
-        condensedBone = createItem(Material.BONE, 1, "§2Condensed Bone");
+        condensedBone = AbstractedCreationMethods.createItem(Material.BONE, 1, "§2Condensed Bone");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_bone"), condensedBone);
         recipe.shape("BBB","BBB","BBB");
@@ -58,7 +49,7 @@ public class CondensedHostileMobItems {
     }
 
     private static void createCondensedRottenFlesh() {
-        condensedRottenFlesh = createItem(Material.BONE, 1, "§2Condensed Rotten Flesh");
+        condensedRottenFlesh = AbstractedCreationMethods.createItem(Material.BONE, 1, "§2Condensed Rotten Flesh");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_rotten_flesh"), condensedRottenFlesh);
         recipe.shape("FFF","FFF","FFF");
@@ -67,7 +58,7 @@ public class CondensedHostileMobItems {
     }
 
     private static void createCondensedBlazeRod() {
-        condensedBlazeRod = createItem(Material.BLAZE_ROD, 1, "§2Condensed Blaze Rod");
+        condensedBlazeRod = AbstractedCreationMethods.createItem(Material.BLAZE_ROD, 1, "§2Condensed Blaze Rod");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_blaze_rod"), condensedBlazeRod);
         recipe.shape("RRR","RRR","RRR");
@@ -76,7 +67,7 @@ public class CondensedHostileMobItems {
     }
 
     private static void createCondensedGunpowder() {
-        condensedGunpowder = createItem(Material.GUNPOWDER, 1, "§2Condensed Gunpowder");
+        condensedGunpowder = AbstractedCreationMethods.createItem(Material.GUNPOWDER, 1, "§2Condensed Gunpowder");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_gunpowder"), condensedGunpowder);
         recipe.shape("GGG","GGG","GGG");
@@ -85,7 +76,7 @@ public class CondensedHostileMobItems {
     }
 
     private static void createCondensedString() {
-        condensedString = createItem(Material.STRING, 1, "§2Condensed String");
+        condensedString = AbstractedCreationMethods.createItem(Material.STRING, 1, "§2Condensed String");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_string"), condensedString);
         recipe.shape("SSS","SSS","SSS");
@@ -94,7 +85,7 @@ public class CondensedHostileMobItems {
     }
 
     private static void createCondensedEnderPearl() {
-        condensedEnderPearl = createItem(Material.ENDER_PEARL, 1, "§2Condensed Ender Pearl");
+        condensedEnderPearl = AbstractedCreationMethods.createItem(Material.ENDER_PEARL, 1, "§2Condensed Ender Pearl");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_ender_pearl"), condensedEnderPearl);
         recipe.shape("EEE","EEE","EEE");
@@ -103,7 +94,7 @@ public class CondensedHostileMobItems {
     }
 
     private static void createCondensedSlimeBlock() {
-        condensedSlimeBlock = createItem(Material.SLIME_BLOCK, 1, "§2Condensed Slime Block");
+        condensedSlimeBlock = AbstractedCreationMethods.createItem(Material.SLIME_BLOCK, 1, "§2Condensed Slime Block");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_slime_block"), condensedSlimeBlock);
         recipe.shape("SSS","SSS","SSS");
@@ -112,7 +103,7 @@ public class CondensedHostileMobItems {
     }
 
     private static void createCondensedMagmaCream() {
-        condensedMagmaCream = createItem(Material.MAGMA_CREAM, 1, "§2Condensed Magma Cream");
+        condensedMagmaCream = AbstractedCreationMethods.createItem(Material.MAGMA_CREAM, 1, "§2Condensed Magma Cream");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_magma_cream"), condensedMagmaCream);
         recipe.shape("MMM","MMM","MMM");
@@ -121,7 +112,7 @@ public class CondensedHostileMobItems {
     }
 
     private static void createCondensedGhastTear() {
-        condensedGhastTear = createItem(Material.GHAST_TEAR, 1, "§2Condensed Ghast Tear");
+        condensedGhastTear = AbstractedCreationMethods.createItem(Material.GHAST_TEAR, 1, "§2Condensed Ghast Tear");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_ghast_tear"), condensedGhastTear);
         recipe.shape("GGG","GGG","GGG");
@@ -130,7 +121,7 @@ public class CondensedHostileMobItems {
     }
 
     private static void createCondensedGoldBlock() {
-        condensedGoldBlock = createItem(Material.GOLD_BLOCK, 1, "§2Condensed Gold Block");
+        condensedGoldBlock = AbstractedCreationMethods.createItem(Material.GOLD_BLOCK, 1, "§2Condensed Gold Block");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_gold_block"), condensedGoldBlock);
         recipe.shape("GGG","GGG","GGG");
@@ -139,7 +130,7 @@ public class CondensedHostileMobItems {
     }
 
     private static void createCondensedNetherStar() {
-        condensedNetherStar = createItem(Material.NETHER_STAR, 1, "§2Condensed Nether Star");
+        condensedNetherStar = AbstractedCreationMethods.createItem(Material.NETHER_STAR, 1, "§2Condensed Nether Star");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_nether_star"), condensedNetherStar);
         recipe.shape("NNN","NNN","NNN");
@@ -148,7 +139,7 @@ public class CondensedHostileMobItems {
     }
 
     private static void createCondensedWitherSkeletonSkull() {
-        condensedWitherSkeletonSkull = createItem(Material.WITHER_SKELETON_SKULL, 1, "§2Condensed Wither Skeleton Skull");
+        condensedWitherSkeletonSkull = AbstractedCreationMethods.createItem(Material.WITHER_SKELETON_SKULL, 1, "§2Condensed Wither Skeleton Skull");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_wither_skeleton_skull"), condensedWitherSkeletonSkull);
         recipe.shape("WWW","WWW","WWW");
@@ -157,7 +148,7 @@ public class CondensedHostileMobItems {
     }
 
     private static void createCondensedBlockOfRedstone() {
-        condensedBlockOfRedstone = createItem(Material.REDSTONE_BLOCK, 1, "§2Condensed Block Of Redstone");
+        condensedBlockOfRedstone = AbstractedCreationMethods.createItem(Material.REDSTONE_BLOCK, 1, "§2Condensed Block Of Redstone");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_block_of_redstone"), condensedBlockOfRedstone);
         recipe.shape("RRR","RRR","RRR");
