@@ -1,5 +1,6 @@
 package com.siege.craftablespawners.commands;
 
+import com.siege.craftablespawners.items.AbstractedCreationMethods;
 import com.siege.craftablespawners.items.spawners.FriendlyMobSpawners;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -21,7 +22,7 @@ public class GiveCommand implements CommandExecutor {
                 try {
                     EntityType entity = EntityType.valueOf(args[0].toUpperCase(Locale.ROOT));
                     int amount = Integer.parseInt(args[1]);
-                    ItemStack item = FriendlyMobSpawners.itemCreator(Material.SPAWNER,1,entity,getSpawnerNameFromEntityType(entity.name()));
+                    ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,entity,getSpawnerNameFromEntityType(entity.name()));
                     for (int i = 0; i < amount; i++) {
                         player.getInventory().addItem(item);
                     }

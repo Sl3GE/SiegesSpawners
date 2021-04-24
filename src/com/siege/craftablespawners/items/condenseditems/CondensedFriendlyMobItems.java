@@ -1,15 +1,8 @@
 package com.siege.craftablespawners.items.condenseditems;
 
 import com.siege.craftablespawners.items.AbstractedCreationMethods;
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.enchantments.Enchantment;
-import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.RecipeChoice;
-import org.bukkit.inventory.ShapedRecipe;
-import org.bukkit.inventory.meta.ItemMeta;
 
 public class CondensedFriendlyMobItems {
     public static ItemStack condensedIronBlock;
@@ -39,96 +32,56 @@ public class CondensedFriendlyMobItems {
     private static void createCondensedIronBlock() {
         condensedIronBlock = AbstractedCreationMethods.createItem(Material.IRON_BLOCK,1,"§2Condensed Iron Block");
 
-        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_iron_block"), condensedIronBlock);
-        recipe.shape("BBB","BBB","BBB");
-        recipe.setIngredient('B', new RecipeChoice.ExactChoice(new ItemStack(Material.IRON_BLOCK,1)));
-        Bukkit.addRecipe(recipe);
+        AbstractedCreationMethods.condenseItems(condensedIronBlock,"condensed_iron_block", new ItemStack(Material.IRON_BLOCK,1));
     }
 
     private static void createCondensedCowDrops() {
         condensedLeather = AbstractedCreationMethods.createItem(Material.LEATHER,1,"§2Condensed Leather");
         condensedBeef = AbstractedCreationMethods.createItem(Material.BEEF,1,"§2Condensed Beef");
 
-        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_leather"), condensedLeather);
-        recipe.shape("LLL","LLL","LLL");
-        recipe.setIngredient('L', new RecipeChoice.ExactChoice(new ItemStack(Material.LEATHER,1)));
-        Bukkit.getServer().addRecipe(recipe);
-
-        recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_beef"), condensedBeef);
-        recipe.shape("BBB","BBB","BBB");
-        recipe.setIngredient('B', new RecipeChoice.ExactChoice(new ItemStack(Material.BEEF,1)));
-        Bukkit.getServer().addRecipe(recipe);
+        AbstractedCreationMethods.condenseItems(condensedLeather,"condensed_leather",new ItemStack(Material.LEATHER,1));
+        AbstractedCreationMethods.condenseItems(condensedBeef,"condensed_beef",new ItemStack(Material.BEEF,1));
     }
 
     private static void createCondensedSnowmanDrops() {
         condensedCarvedPumpkin = AbstractedCreationMethods.createItem(Material.CARVED_PUMPKIN,1,"§2Condensed Carved Pumpkin");
         condensedSnowBlock = AbstractedCreationMethods.createItem(Material.SNOW_BLOCK,1,"§2Condensed Snow Block");
 
-        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_carved_pumpkin"), condensedCarvedPumpkin);
-        recipe.shape("CCC","CCC","CCC");
-        recipe.setIngredient('C', new RecipeChoice.ExactChoice(new ItemStack(Material.CARVED_PUMPKIN,1)));
-        Bukkit.getServer().addRecipe(recipe);
-
-        recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_snow_block"), condensedSnowBlock);
-        recipe.shape("BBB","BBB","BBB");
-        recipe.setIngredient('B', new RecipeChoice.ExactChoice(new ItemStack(Material.SNOW_BLOCK,1)));
-        Bukkit.getServer().addRecipe(recipe);
+        AbstractedCreationMethods.condenseItems(condensedCarvedPumpkin,"condensed_carved_pumpkin",new ItemStack(Material.CARVED_PUMPKIN,1));
+        AbstractedCreationMethods.condenseItems(condensedSnowBlock,"condensed_snow_block",new ItemStack(Material.SNOW_BLOCK,1));
     }
 
     private static void createCondensedSheepDrops() {
         condensedWhiteWool = AbstractedCreationMethods.createItem(Material.WHITE_WOOL,1,"§2Condensed White Wool");
         condensedMutton = AbstractedCreationMethods.createItem(Material.MUTTON,1,"§2Condensed Mutton");
 
-        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_white_wool"), condensedWhiteWool);
-        recipe.shape("WWW","WWW","WWW");
-        recipe.setIngredient('W', new RecipeChoice.ExactChoice(new ItemStack(Material.WHITE_WOOL,1)));
-        Bukkit.getServer().addRecipe(recipe);
-
-        recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_mutton"), condensedMutton);
-        recipe.shape("MMM","MMM","MMM");
-        recipe.setIngredient('M', new RecipeChoice.ExactChoice(new ItemStack(Material.MUTTON,1)));
-        Bukkit.getServer().addRecipe(recipe);
+        AbstractedCreationMethods.condenseItems(condensedWhiteWool,"condensed_white_wool",new ItemStack(Material.WHITE_WOOL,1));
+        AbstractedCreationMethods.condenseItems(condensedMutton,"condensed_mutton",new ItemStack(Material.MUTTON,1));
     }
 
     private static void createCondensedPorkChop() {
         condensedPorkChop = AbstractedCreationMethods.createItem(Material.PORKCHOP,1,"§2Condensed Porkchop");
 
-        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_porkchop"), condensedPorkChop);
-        recipe.shape("PPP","PPP","PPP");
-        recipe.setIngredient('P', new RecipeChoice.ExactChoice(new ItemStack(Material.PORKCHOP,1)));
-        Bukkit.addRecipe(recipe);
+        AbstractedCreationMethods.condenseItems(condensedPorkChop,"condensed_porkchop",new ItemStack(Material.PORKCHOP,1));
     }
 
     private static void createCondensedInkSac() {
         condensedInkSac = AbstractedCreationMethods.createItem(Material.INK_SAC,1,"§2Condensed Ink Sac");
 
-        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_ink_sac"), condensedInkSac);
-        recipe.shape("III","III","III");
-        recipe.setIngredient('I', new RecipeChoice.ExactChoice(new ItemStack(Material.INK_SAC,1)));
-        Bukkit.addRecipe(recipe);
+        AbstractedCreationMethods.condenseItems(condensedInkSac,"condensed_ink_sac",new ItemStack(Material.INK_SAC,1));
     }
 
     private static void createCondensedChickenDrops() {
         condensedChicken = AbstractedCreationMethods.createItem(Material.CHICKEN,1,"§2Condensed Chicken");
         condensedFeather = AbstractedCreationMethods.createItem(Material.FEATHER,1,"§2Condensed Feather");
 
-        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_chicken"), condensedChicken);
-        recipe.shape("CCC","CCC","CCC");
-        recipe.setIngredient('C', new RecipeChoice.ExactChoice(new ItemStack(Material.CHICKEN,1)));
-        Bukkit.getServer().addRecipe(recipe);
-
-        recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_feather"), condensedFeather);
-        recipe.shape("FFF","FFF","FFF");
-        recipe.setIngredient('F', new RecipeChoice.ExactChoice(new ItemStack(Material.FEATHER,1)));
-        Bukkit.getServer().addRecipe(recipe);
+        AbstractedCreationMethods.condenseItems(condensedChicken,"condensed_chicken",new ItemStack(Material.CHICKEN,1));
+        AbstractedCreationMethods.condenseItems(condensedFeather,"condensed_feather",new ItemStack(Material.FEATHER,1));
     }
 
     private static void createCondensedEmeraldBlock() {
         condensedEmeraldBlock = AbstractedCreationMethods.createItem(Material.EMERALD_BLOCK,1,"§2Condensed Emerald Block");
 
-        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("condensed_emerald_block"), condensedEmeraldBlock);
-        recipe.shape("EEE","EEE","EEE");
-        recipe.setIngredient('E', new RecipeChoice.ExactChoice(new ItemStack(Material.EMERALD_BLOCK,1)));
-        Bukkit.addRecipe(recipe);
+        AbstractedCreationMethods.condenseItems(condensedEmeraldBlock,"condensed_emerald_block",new ItemStack(Material.EMERALD_BLOCK,1));
     }
 }

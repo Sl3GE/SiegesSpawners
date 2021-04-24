@@ -1,12 +1,16 @@
 package com.siege.craftablespawners.items;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.CreatureSpawner;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.RecipeChoice;
+import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.BlockStateMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -45,5 +49,21 @@ public class AbstractedCreationMethods {
         meta.setDisplayName(displayName);
         item.setItemMeta(meta);
         return item;
+    }
+
+
+    // recipe for separating condensed items
+    public static void separateCondensedItem(ItemStack itemStackName, String recipeKey, ItemStack ingredient) {
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft(recipeKey), itemStackName);
+        recipe.shape("   "," X ","   ");
+        recipe.setIngredient('X', new RecipeChoice.ExactChoice(ingredient));
+        Bukkit.getServer().addRecipe(recipe);
+    }
+
+    public static void condenseItems(ItemStack resultItem, String recipeKey, ItemStack ingredient) {
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft(recipeKey), resultItem);
+        recipe.shape("XXX","XXX","XXX");
+        recipe.setIngredient('X', new RecipeChoice.ExactChoice(ingredient));
+        Bukkit.getServer().addRecipe(recipe);
     }
 }
