@@ -1,5 +1,6 @@
 package com.siege.craftablespawners.items.spawners;
 
+import com.siege.craftablespawners.items.AbstractedCreationMethods;
 import com.siege.craftablespawners.items.condenseditems.CondensedHostileMobItems;
 import com.siege.craftablespawners.items.supercondenseditems.SuperCondensedHostileMobItems;
 import org.bukkit.*;
@@ -28,34 +29,10 @@ public class HostileMobSpawners {
         witherSkeletonSpawnerRecipe();
         witchSpawnerRecipe();
     }
-    private static ItemStack itemCreator(Material material, int amount, EntityType entityType, String displayName) {
-        /*
-        Get item meta from item
-        Cast item meta to blockstatemeta
-        Get blockstate from blockstatemeta
-        Cast blockstate to creaturespawner
-        Set entitytype of creaturespawner
-        Cast modified creaturespawner to blockstate
-        Blockstatemeta set modified blockstate
-        Cast blockstatemeta to item meta
-        Itemstack set modified item meta
-         */
-        ItemStack item = new ItemStack(material,amount);
-        ItemMeta meta = item.getItemMeta();
-        BlockStateMeta blockStateMeta = (BlockStateMeta) meta;
-        BlockState blockState = blockStateMeta.getBlockState();
-        CreatureSpawner creatureSpawner = (CreatureSpawner) blockState;
-        creatureSpawner.setSpawnedType(entityType);
-        blockState = (BlockState) creatureSpawner;
-        blockStateMeta.setBlockState(blockState);
-        meta = (ItemMeta) blockStateMeta;
-        meta.setDisplayName(displayName);
-        item.setItemMeta(meta);
-        return item;
-    }
+
 
     private static void skeletonSpawnerRecipe() {
-        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.SKELETON,"§6Skeleton Spawner");
+        ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,EntityType.SKELETON,"§6Skeleton Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("skeleton_spawner"), item);
         recipe.shape("BBB","BIB","BBB");
@@ -65,7 +42,7 @@ public class HostileMobSpawners {
     }
 
     private static void zombieSpawnerRecipe() {
-        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.ZOMBIE,"§6Zombie Spawner");
+        ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,EntityType.ZOMBIE,"§6Zombie Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("zombie_spawner"), item);
         recipe.shape("FFF","FIF","FFF");
@@ -75,7 +52,7 @@ public class HostileMobSpawners {
     }
 
     private static void blazeSpawnerRecipe() {
-        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.BLAZE,"§6Blaze Spawner");
+        ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,EntityType.BLAZE,"§6Blaze Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("blaze_spawner"), item);
         recipe.shape("RRR","RIR","RRR");
@@ -85,7 +62,7 @@ public class HostileMobSpawners {
     }
 
     private static void creeperSpawnerRecipe() {
-        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.CREEPER,"§6Creeper Spawner");
+        ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,EntityType.CREEPER,"§6Creeper Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("creeper_spawner"), item);
         recipe.shape("GGG","GIG","GGG");
@@ -95,7 +72,7 @@ public class HostileMobSpawners {
     }
 
     private static void spiderSpawnerRecipe() {
-        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.SPIDER,"§6Spider Spawner");
+        ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,EntityType.SPIDER,"§6Spider Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("spider_spawner"), item);
         recipe.shape("SSS","SIS","SSS");
@@ -105,7 +82,7 @@ public class HostileMobSpawners {
     }
 
     private static void endermanSpawnerRecipe() {
-        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.ENDERMAN,"§6Enderman Spawner");
+        ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,EntityType.ENDERMAN,"§6Enderman Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("enderman_spawner"), item);
         recipe.shape("EEE","EIE","EEE");
@@ -115,7 +92,7 @@ public class HostileMobSpawners {
     }
 
     private static void slimeSpawnerRecipe() {
-        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.SLIME,"§6Slime Spawner");
+        ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,EntityType.SLIME,"§6Slime Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("slime_spawner"), item);
         recipe.shape("SSS","SIS","SSS");
@@ -125,7 +102,7 @@ public class HostileMobSpawners {
     }
 
     private static void magmaCubeSpawnerRecipe() {
-        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.MAGMA_CUBE,"§6Magma Cube Spawner");
+        ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,EntityType.MAGMA_CUBE,"§6Magma Cube Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("magma_cube_spawner"), item);
         recipe.shape("MMM","MIM","MMM");
@@ -135,7 +112,7 @@ public class HostileMobSpawners {
     }
 
     private static void ghastSpawnerRecipe() {
-        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.GHAST,"§6Ghast Spawner");
+        ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,EntityType.GHAST,"§6Ghast Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("ghast_spawner"), item);
         recipe.shape("GGG","GIG","GGG");
@@ -145,7 +122,7 @@ public class HostileMobSpawners {
     }
 
     private static void zombifiedPiglinSpawnerRecipe() {
-        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.ZOMBIFIED_PIGLIN,"§6Zombified Piglin Spawner");
+        ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,EntityType.ZOMBIFIED_PIGLIN,"§6Zombified Piglin Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("zombie_piglin_spawner"), item);
         recipe.shape("GGG","GIG","GGG");
@@ -155,7 +132,7 @@ public class HostileMobSpawners {
     }
 
     private static void netherStarSpawnerRecipe() {
-        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.WITHER,"§6Wither Spawner");
+        ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,EntityType.WITHER,"§6Wither Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("wither_spawner"), item);
         recipe.shape("NNN","NIN","NNN");
@@ -165,7 +142,7 @@ public class HostileMobSpawners {
     }
 
     private static void witherSkeletonSpawnerRecipe() {
-        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.WITHER_SKELETON,"§6Wither Skeleton Spawner");
+        ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,EntityType.WITHER_SKELETON,"§6Wither Skeleton Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("wither_skeleton_spawner"), item);
         recipe.shape("WWW","WIW","WWW");
@@ -175,7 +152,7 @@ public class HostileMobSpawners {
     }
 
     private static void witchSpawnerRecipe() {
-        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.WITCH,"§6Witch Spawner");
+        ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,EntityType.WITCH,"§6Witch Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("witch_spawner"), item);
         recipe.shape("GRG","RIR","GRG");

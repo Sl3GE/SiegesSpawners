@@ -1,5 +1,6 @@
 package com.siege.craftablespawners.items.spawners;
 
+import com.siege.craftablespawners.items.AbstractedCreationMethods;
 import com.siege.craftablespawners.items.condenseditems.CondensedFriendlyMobItems;
 import com.siege.craftablespawners.items.supercondenseditems.SuperCondensedFriendlyMobItems;
 import org.bukkit.Bukkit;
@@ -28,34 +29,8 @@ public class FriendlyMobSpawners {
         villagerSpawnerRecipe();
     }
 
-    public static ItemStack itemCreator(Material material, int amount, EntityType entityType, String displayName) {
-        /*
-        Get item meta from item
-        Cast item meta to blockstatemeta
-        Get blockstate from blockstatemeta
-        Cast blockstate to creaturespawner
-        Set entitytype of creaturespawner
-        Cast modified creaturespawner to blockstate
-        Blockstatemeta set modified blockstate
-        Cast blockstatemeta to item meta
-        Itemstack set modified item meta
-         */
-        ItemStack item = new ItemStack(material,amount);
-        ItemMeta meta = item.getItemMeta();
-        BlockStateMeta blockStateMeta = (BlockStateMeta) meta;
-        BlockState blockState = blockStateMeta.getBlockState();
-        CreatureSpawner creatureSpawner = (CreatureSpawner) blockState;
-        creatureSpawner.setSpawnedType(entityType);
-        blockState = (BlockState) creatureSpawner;
-        blockStateMeta.setBlockState(blockState);
-        meta = (ItemMeta) blockStateMeta;
-        meta.setDisplayName(displayName);
-        item.setItemMeta(meta);
-        return item;
-    }
-
     private static void ironGolemSpawnerRecipe() {
-        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.IRON_GOLEM,"§6Iron Golem Spawner");
+        ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,EntityType.IRON_GOLEM,"§6Iron Golem Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("iron_golem_spawner"), item);
         recipe.shape("III","IBI","III");
@@ -65,7 +40,7 @@ public class FriendlyMobSpawners {
     }
 
     private static void cowSpawnerRecipe() {
-        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.COW,"§6Cow Spawner");
+        ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,EntityType.COW,"§6Cow Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("cow_spawner"), item);
         recipe.shape("LLL","BIB","BBB");
@@ -76,7 +51,7 @@ public class FriendlyMobSpawners {
     }
 
     private static void snowManSpawnerRecipe() {
-        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.SNOWMAN,"§6Snowman Spawner");
+        ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,EntityType.SNOWMAN,"§6Snowman Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("snowman_spawner"), item);
         recipe.shape("CCC","BIB","BBB");
@@ -87,7 +62,7 @@ public class FriendlyMobSpawners {
     }
 
     private static void sheepSpawnerRecipe() {
-        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.SHEEP,"§6Sheep Spawner");
+        ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,EntityType.SHEEP,"§6Sheep Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("sheep_spawner"), item);
         recipe.shape("WWW","MIM","MMM");
@@ -98,7 +73,7 @@ public class FriendlyMobSpawners {
     }
 
     private static void pigSpawnerRecipe() {
-        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.PIG,"§6Pig Spawner");
+        ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,EntityType.PIG,"§6Pig Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("pig_spawner"), item);
         recipe.shape("PPP","PIP","PPP");
@@ -108,7 +83,7 @@ public class FriendlyMobSpawners {
     }
 
     private static void horseSpawnerRecipe() {
-        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.HORSE,"§6Horse Spawner");
+        ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,EntityType.HORSE,"§6Horse Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("horse_spawner"), item);
         recipe.shape("LLL","LIL","LLL");
@@ -118,7 +93,7 @@ public class FriendlyMobSpawners {
     }
 
     private static void squidSpawnerRecipe() {
-        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.SQUID,"§6Squid Spawner");
+        ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,EntityType.SQUID,"§6Squid Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("squid_spawner"), item);
         recipe.shape("SSS","SIS","SSS");
@@ -128,7 +103,7 @@ public class FriendlyMobSpawners {
     }
 
     private static void chickenSpawnerRecipe() {
-        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.CHICKEN,"§6Chicken Spawner");
+        ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,EntityType.CHICKEN,"§6Chicken Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("chicken_spawner"), item);
         recipe.shape("FFF","CIC","CCC");
@@ -139,7 +114,7 @@ public class FriendlyMobSpawners {
     }
 
     private static void villagerSpawnerRecipe() {
-        ItemStack item = itemCreator(Material.SPAWNER,1,EntityType.VILLAGER,"§6Villager Spawner");
+        ItemStack item = AbstractedCreationMethods.itemSpawnerCreator(Material.SPAWNER,1,EntityType.VILLAGER,"§6Villager Spawner");
 
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("villager_spawner"), item);
         recipe.shape(" E ","EIE"," E ");
