@@ -14,6 +14,8 @@ import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.BlockStateMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.lang.reflect.Array;
+
 public class AbstractedCreationMethods {
     public static ItemStack createItem(Material material, int amount, String displayName) {
         ItemStack item = new ItemStack(material, amount);
@@ -52,12 +54,29 @@ public class AbstractedCreationMethods {
     }
 
 
-    // recipe for separating condensed items
-    public static void separateCondensedItem(ItemStack itemStackName, String recipeKey, ItemStack ingredient) {
+
+    private static void separateCondensendItemRecipe(ItemStack itemStackName, String recipeKey, ItemStack ingredient, String[] shapeList) {
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft(recipeKey), itemStackName);
-        recipe.shape("   "," X ","   ");
+        recipe.shape(shapeList);
         recipe.setIngredient('X', new RecipeChoice.ExactChoice(ingredient));
         Bukkit.getServer().addRecipe(recipe);
+    }
+    // recipe for separating condensed items
+    public static void separateCondensedItem(ItemStack itemStackName, String recipeKey, ItemStack ingredient) {
+        String[] shapeList = {"X  "," X ","   "};
+        String[] specifiedShapeList;
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (j == 0) {
+                    specifiedShapeList = new String[]{shapeList[i], "   ", "   "};
+                } else if (j == 1) {
+                    specifiedShapeList = new String[]{"   ",shapeList[i],"   "};
+                } else {
+                    specifiedShapeList = new String[]{"   ", "   ", shapeList[i]};
+                }
+                separateCondensendItemRecipe(itemStackName, recipeKey+i+j, ingredient, specifiedShapeList);
+            }
+        }
     }
 
     public static void condenseItems(ItemStack resultItem, String recipeKey, ItemStack ingredient) {

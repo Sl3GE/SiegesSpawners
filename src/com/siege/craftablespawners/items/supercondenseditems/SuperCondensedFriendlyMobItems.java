@@ -32,6 +32,9 @@ public class SuperCondensedFriendlyMobItems {
 
         AbstractedCreationMethods.condenseItems(superCondensedLeather,"super_condensed_leather", CondensedFriendlyMobItems.condensedLeather);
         AbstractedCreationMethods.condenseItems(superCondensedBeef,"super_condensed_beef", CondensedFriendlyMobItems.condensedBeef);
+
+        AbstractedCreationMethods.separateCondensedItem(AbstractedCreationMethods.createItem(Material.LEATHER, 9, "§2Condensed Leather"),"revert_super_condensed_leather", superCondensedLeather);
+        AbstractedCreationMethods.separateCondensedItem(AbstractedCreationMethods.createItem(Material.BEEF, 9, "§2Condensed Beef"),"revert_super_condensed_beef", superCondensedBeef);
     }
 
     private static void createSuperCondensedSnowmanDrops() {
@@ -40,6 +43,9 @@ public class SuperCondensedFriendlyMobItems {
 
         AbstractedCreationMethods.condenseItems(superCondensedCarvedPumpkin,"super_condensed_carved_pumpkin", CondensedFriendlyMobItems.condensedCarvedPumpkin);
         AbstractedCreationMethods.condenseItems(superCondensedSnowBlock,"super_condensed_snow_block", CondensedFriendlyMobItems.condensedSnowBlock);
+
+        AbstractedCreationMethods.separateCondensedItem(AbstractedCreationMethods.createItem(Material.CARVED_PUMPKIN, 9, "§2Condensed Carved Pumpkin"),"revert_super_condensed_carved_pumpkin", superCondensedCarvedPumpkin);
+        AbstractedCreationMethods.separateCondensedItem(AbstractedCreationMethods.createItem(Material.SNOW_BLOCK, 9, "§2Condensed Snow Block"),"revert_super_condensed_snow_block", superCondensedSnowBlock);
     }
 
     private static void superCreateCondensedSheepDrops() {
@@ -48,18 +54,25 @@ public class SuperCondensedFriendlyMobItems {
 
         AbstractedCreationMethods.condenseItems(superCondensedWhiteWool,"super_condensed_white_wool", CondensedFriendlyMobItems.condensedWhiteWool);
         AbstractedCreationMethods.condenseItems(superCondensedMutton,"super_condensed_mutton", CondensedFriendlyMobItems.condensedMutton);
+
+        AbstractedCreationMethods.separateCondensedItem(AbstractedCreationMethods.createItem(Material.WHITE_WOOL, 9, "§2Condensed White Wool"),"revert_super_condensed_white_wool", superCondensedWhiteWool);
+        AbstractedCreationMethods.separateCondensedItem(AbstractedCreationMethods.createItem(Material.MUTTON, 9, "§2Condensed Mutton"),"revert_super_condensed_mutton", superCondensedMutton);
     }
 
     private static void createSuperCondensedPorkChop() {
         superCondensedPorkChop = AbstractedCreationMethods.createItem(Material.PORKCHOP,1,"§1Super Condensed Porkchop");
 
         AbstractedCreationMethods.condenseItems(superCondensedPorkChop,"super_condensed_porkchop", CondensedFriendlyMobItems.condensedPorkChop);
+
+        AbstractedCreationMethods.separateCondensedItem(AbstractedCreationMethods.createItem(Material.PORKCHOP, 9, "§2Condensed Porkchop"),"revert_super_condensed_porkchop", superCondensedPorkChop);
     }
 
     private static void createSuperCondensedInkSac() {
         superCondensedInkSac = AbstractedCreationMethods.createItem(Material.INK_SAC,1,"§1Super Condensed Ink Sac");
 
         AbstractedCreationMethods.condenseItems(superCondensedInkSac,"super_condensed_ink_sac", CondensedFriendlyMobItems.condensedInkSac);
+
+        AbstractedCreationMethods.separateCondensedItem(AbstractedCreationMethods.createItem(Material.INK_SAC, 9, "§2Condensed Ink Sac"),"revert_super_condensed_ink_sac", superCondensedInkSac);
     }
 
     private static void superCreateCondensedChickenDrops() {
@@ -68,5 +81,8 @@ public class SuperCondensedFriendlyMobItems {
 
         AbstractedCreationMethods.condenseItems(superCondensedChicken,"super_condensed_chicken", CondensedFriendlyMobItems.condensedChicken);
         AbstractedCreationMethods.condenseItems(superCondensedFeather,"super_condensed_feather", CondensedFriendlyMobItems.condensedFeather);
+
+        AbstractedCreationMethods.separateCondensedItem(AbstractedCreationMethods.createItem(Material.CHICKEN, 9, "§2Condensed Chicken"),"revert_super_condensed_chicken", superCondensedChicken);
+        AbstractedCreationMethods.separateCondensedItem(AbstractedCreationMethods.createItem(Material.FEATHER, 9, "§2Condensed Feather"),"revert_super_condensed_feather", superCondensedFeather);
     }
 }
