@@ -77,6 +77,10 @@ public class AbstractedCreationMethods {
                 separateCondensendItemRecipe(itemStackName, recipeKey+i+j, ingredient, specifiedShapeList);
             }
         }
+        specifiedShapeList = new String[]{"X ","  "};
+        separateCondensendItemRecipe(itemStackName, recipeKey+1, ingredient,specifiedShapeList);
+        specifiedShapeList = new String[]{"  ","X "};
+        separateCondensendItemRecipe(itemStackName, recipeKey+2, ingredient,specifiedShapeList);
     }
 
     public static void condenseItems(ItemStack resultItem, String recipeKey, ItemStack ingredient) {
