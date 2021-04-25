@@ -55,8 +55,8 @@ public class CondensedFriendlyMobItems {
         AbstractedCreationMethods.condenseItems(condensedCarvedPumpkin,"condensed_carved_pumpkin",new ItemStack(Material.CARVED_PUMPKIN,1));
         AbstractedCreationMethods.condenseItems(condensedSnowBlock,"condensed_snow_block",new ItemStack(Material.SNOW_BLOCK,1));
 
-        AbstractedCreationMethods.separateCondensedItem(new ItemStack(Material.LEATHER,9),"revert_condensed_leather", condensedLeather);
-        AbstractedCreationMethods.separateCondensedItem(new ItemStack(Material.BEEF,9),"revert_condensed_beef", condensedBeef);
+        AbstractedCreationMethods.separateCondensedItem(new ItemStack(Material.CARVED_PUMPKIN,9),"revert_condensed_carved_pumpkin", condensedCarvedPumpkin);
+        AbstractedCreationMethods.separateCondensedItem(new ItemStack(Material.SNOW_BLOCK,9),"revert_condensed_snow_block", condensedSnowBlock);
     }
 
     private static void createCondensedSheepDrops() {
