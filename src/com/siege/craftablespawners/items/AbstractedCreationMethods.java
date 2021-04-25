@@ -1,5 +1,7 @@
 package com.siege.craftablespawners.items;
 
+import com.siege.craftablespawners.items.spawners.FriendlyMobSpawners;
+import com.siege.craftablespawners.items.spawners.HostileMobSpawners;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -14,14 +16,12 @@ import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.BlockStateMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.lang.reflect.Array;
-
 public class AbstractedCreationMethods {
     public static ItemStack createItem(Material material, int amount, String displayName) {
         ItemStack item = new ItemStack(material, amount);
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName(displayName);
-        meta.addEnchant(Enchantment.LUCK,1,true);
+        meta.addEnchant(Enchantment.LUCK, 1, true);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         item.setItemMeta(meta);
         return item;
@@ -39,7 +39,7 @@ public class AbstractedCreationMethods {
         Cast blockstatemeta to item meta
         Itemstack set modified item meta
          */
-        ItemStack item = new ItemStack(material,amount);
+        ItemStack item = new ItemStack(material, amount);
         ItemMeta meta = item.getItemMeta();
         BlockStateMeta blockStateMeta = (BlockStateMeta) meta;
         BlockState blockState = blockStateMeta.getBlockState();
@@ -54,39 +54,50 @@ public class AbstractedCreationMethods {
     }
 
 
-
     private static void separateCondensendItemRecipe(ItemStack itemStackName, String recipeKey, ItemStack ingredient, String[] shapeList) {
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft(recipeKey), itemStackName);
         recipe.shape(shapeList);
         recipe.setIngredient('X', new RecipeChoice.ExactChoice(ingredient));
         Bukkit.getServer().addRecipe(recipe);
     }
+
     // recipe for separating condensed items
     public static void separateCondensedItem(ItemStack itemStackName, String recipeKey, ItemStack ingredient) {
-        String[] shapeList = {"X  "," X ","   "};
+        String[] shapeList = {"X  ", " X ", "   "};
         String[] specifiedShapeList;
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 3; j++) {
                 if (j == 0) {
                     specifiedShapeList = new String[]{shapeList[i], "   ", "   "};
                 } else if (j == 1) {
-                    specifiedShapeList = new String[]{"   ",shapeList[i],"   "};
+                    specifiedShapeList = new String[]{"   ", shapeList[i], "   "};
                 } else {
                     specifiedShapeList = new String[]{"   ", "   ", shapeList[i]};
                 }
-                separateCondensendItemRecipe(itemStackName, recipeKey+i+j, ingredient, specifiedShapeList);
+                separateCondensendItemRecipe(itemStackName, recipeKey + i + j, ingredient, specifiedShapeList);
             }
         }
-        specifiedShapeList = new String[]{"X ","  "};
-        separateCondensendItemRecipe(itemStackName, recipeKey+1, ingredient,specifiedShapeList);
-        specifiedShapeList = new String[]{"  ","X "};
-        separateCondensendItemRecipe(itemStackName, recipeKey+2, ingredient,specifiedShapeList);
+        specifiedShapeList = new String[]{"X ", "  "};
+        separateCondensendItemRecipe(itemStackName, recipeKey + 1, ingredient, specifiedShapeList);
+        specifiedShapeList = new String[]{"  ", "X "};
+        separateCondensendItemRecipe(itemStackName, recipeKey + 2, ingredient, specifiedShapeList);
     }
 
     public static void condenseItems(ItemStack resultItem, String recipeKey, ItemStack ingredient) {
         ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft(recipeKey), resultItem);
-        recipe.shape("XXX","XXX","XXX");
+        recipe.shape("XXX", "XXX", "XXX");
         recipe.setIngredient('X', new RecipeChoice.ExactChoice(ingredient));
         Bukkit.getServer().addRecipe(recipe);
+    }
+
+    public static ItemStack getSpawnerFromEntityType(EntityType entityType) {
+        ItemStack itemStack = FriendlyMobSpawners.getFriendlyEntityTypesMap().get(entityType);
+        if (itemStack == null) {
+            itemStack = HostileMobSpawners.gethostileEntityTypesMap().get(entityType);
+            if (itemStack == null) {
+                itemStack = new ItemStack(Material.SPAWNER, 1);
+            }
+        }
+        return itemStack;
     }
 }

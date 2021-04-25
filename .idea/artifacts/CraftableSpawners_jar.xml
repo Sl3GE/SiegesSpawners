@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" build-on-make="true" name="CraftableSpawners:jar">
-    <output-path>$PROJECT_DIR$/../1.16.1 Test Server/plugins</output-path>
+    <output-path>$USER_HOME$/Desktop/Plugins/1.16.1 Test Server/plugins</output-path>
     <root id="archive" name="CraftableSpawners.jar">
       <element id="module-output" name="CraftableSpawners" />
     </root>
