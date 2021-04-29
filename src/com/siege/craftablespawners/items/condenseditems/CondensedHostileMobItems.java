@@ -44,7 +44,7 @@ public class CondensedHostileMobItems {
     }
 
     private static void createCondensedRottenFlesh() {
-        condensedRottenFlesh = AbstractedCreationMethods.createItem(Material.BONE, 1, "§2Condensed Rotten Flesh");
+        condensedRottenFlesh = AbstractedCreationMethods.createItem(Material.ROTTEN_FLESH, 1, "§2Condensed Rotten Flesh");
 
         AbstractedCreationMethods.condenseItems(condensedRottenFlesh,"condensed_rotten_flesh", new ItemStack(Material.ROTTEN_FLESH,1));
 
